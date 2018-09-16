@@ -4,6 +4,8 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {AuthModule} from './auth/auth.module';
+import {HomeModule} from './web/home/home.module';
+import {WebModule} from './web/web.module';
 import {SharedModule} from './shared/shared.module';
 import {AdminModule} from './admin/admin.module';
 import {ModuleRouting} from './app-routing';
@@ -20,6 +22,7 @@ import {AuthenticationInterceptor} from './shared/services/authentication.interc
     imports: [
         BrowserModule,
         AuthModule,
+        WebModule,
         FormsModule,
         RouterModule,
         SharedModule,
