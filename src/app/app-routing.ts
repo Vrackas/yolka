@@ -9,7 +9,7 @@ import {AdminComponent} from './admin/admin.component';
 const APP_ROUTING: Routes = [
     {path: '', redirectTo: 'web', pathMatch: 'full'},
     {
-        path:'web',
+        path: 'web',
         component: WebComponent,
     },
     {

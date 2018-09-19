@@ -3,18 +3,24 @@ import {CommonModule} from '@angular/common';
 import {WebComponent} from './web.component';
 import {HomeComponent} from './home/home.component';
 import {HeaderComponent} from './header/header.component';
-import {WebRoutingModule} from './web-routing';
 import {FormsModule} from '@angular/forms';
+import {RouterModule} from "@angular/router";
+import {ModuleRouting} from "./web-routing";
+import {HeaderModule} from "./header/header.module";
+import {AboutModule} from "./about/about.module";
+import {FooterModule} from "./footer/footer.module";
 
 @NgModule({
     imports: [
         CommonModule,
-        WebRoutingModule,
-        FormsModule
+        ModuleRouting,
+        FormsModule,
+        HeaderModule,
+        AboutModule,
+        FooterModule
     ],
     declarations: [
         WebComponent,
-        HeaderComponent,
         HomeComponent
     ],
     providers: [

@@ -1,56 +1,50 @@
 <div class="web_header">
-    <div class="container">
-        <div class="header-site-content">
-            <div class="header-site-content-logo">
-                <a ui-sref="home" class="main-title ">
-                    <img src="content/img/logo_nav_bar.png" alt="">
+    <div class="top">
+        <div class="container">
+
+            <div class="header_site_logo">
+                <a routerLink="./home" class="main-title ">
+                    <img src="../assets/img/web/header/Logo_header.png" alt="">
                 </a>
             </div>
-            <div class="header-site-content-menu">
-                <ul>
-                    <li><a href="" >trading</a>
-                    </li>
-                    <li><a href="" >investments</a>
-                    </li>
-                    <li><a href="" >competitions</a>
-                    </li>
-                    <li><a href="" >partners</a>
 
-                    </li>
-                    <li><a href="" >about</a>
-                    </li>
-                </ul>
+            <div class="header_site_social">
+                <a href=""><i class="fab fa-vk"></i></a>
+                <a href=""><i class="fab fa-instagram"></i></a>
+                <a href=""><i class="fab fa-viber"></i></a>
+                <a href=""><i class="fab fa-whatsapp"></i></a>
             </div>
-            <div class="header_wrapper">
-                <div class="header_wrapper_block" layout="column" layout-align="center space-between">
-                    <div class="header-site-content-menu">
-                        <ul layout="column">
-                            <li><a href="" >trading</a>
-                            </li>
-                            <li><a href="" >investments</a>
-                            </li>
-                            <li><a href="" >competitions</a>
-                            </li>
-                            <li><a href="" >partners</a>
-
-                            </li>
-                            <li><a href="" >about</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="header_wrapper_bottom">
-
-                    </div>
-                </div>
-                <div class="header_wrapper_close">
-                    <button class="main_button" ng-click="vm.headerWrapperClose()"><i class="fas fa-times"></i></button>
-                </div>
-
+            <div class="header_site_sity">
+                <span>ваш город</span>
+                <!--(click)=""-->
+                <!--<ul class="header_sity_block_list">-->
+                <!--<li>Москва</li>-->
+                <!--<li>Санкт-Петербург</li>-->
+                <!--<li>Рязань</li>-->
+                <!--</ul>-->
             </div>
-            <div class="header_wrapper_open">
-                <button class="main_button" ng-click="vm.headerWrapperOpen()"><i class="fas fa-bars"></i></button>
+            <div style="flex: 30"></div>
+            <div class="header_site_phone">
+                <a href="tel:8 800 600 04 03"><i class="fas fa-phone"></i>8 800 600 04 03</a>
+                <a href="">заказать звонок ></a>
+            </div>
+            <div class="header_site_download">
+                <a href=""><img src="../assets/img/web/header/google.png" alt=""></a>
+                <a href=""><img src="../assets/img/web/header/apple.png" alt=""></a>
             </div>
         </div>
     </div>
+    <div class="sub_header">
+        <div class="container">
+            <a routerLink="./about">о сервисе</a>
+            <a href="">для специалистов</a>
+            <a href="">магазин</a>
+            <a href="">помощь</a>
+            <a href="">услуги</a>
+            <a href="">войти</a>
 
+        </div>
+
+
+    </div>
 </div>

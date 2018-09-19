@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {HeaderComponent} from './header.component';
+import {FooterComponent} from './footer.component';
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {BrowserModule} from "@angular/platform-browser";
@@ -13,16 +13,16 @@ import {BrowserModule} from "@angular/platform-browser";
         RouterModule
     ],
     declarations: [
-        HeaderComponent
+        FooterComponent
     ],
     providers: [
 
     ],
     exports: [
-        HeaderComponent
+        FooterComponent
     ]
 })
-export class HeaderModule {
+export class FooterModule {
     constructor() {
         // console.log('Home module is loaded');
     }

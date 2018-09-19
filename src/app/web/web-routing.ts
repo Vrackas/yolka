@@ -1,38 +1,31 @@
 import {RouterModule, Routes} from '@angular/router';
-import {NgModule} from '@angular/core';
+import {ModuleWithProviders} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {HomeComponent} from './home/home.component';
+import {AboutComponent} from './about/about.component';
+import {WebComponent} from "./web.component";
 
 
 const WEB_ROUTING: Routes = [
     {
-        path: 'home',
-        component: HomeComponent,
-        // children: [
-        //     {path: '', redirectTo: 'home', pathMatch: 'full'},
-        //     {
-        //         path: 'home',
-        //         component: HomeComponent
-        //     }
-        //
-        // ]
+        path: 'web',
+        component: WebComponent,
+        children: [
+            {path: '', redirectTo: 'home', pathMatch: 'full'},
+            {
+                path: 'home',
+                component: HomeComponent
+            },
+            {
+                path: 'about',
+                component: AboutComponent
+            }
+
+        ]
     }
 ];
 
-@NgModule({
-    imports: [
-        CommonModule,
-        RouterModule.forChild(WEB_ROUTING)
-    ],
-    declarations: [],
-    exports: [
-        RouterModule
-    ]
-})
+
+export const ModuleRouting: ModuleWithProviders = RouterModule.forChild(WEB_ROUTING);
 
 
-export class WebRoutingModule {
-    constructor() {
-        console.log('web routing is loaded');
-    }
-}

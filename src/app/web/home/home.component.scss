@@ -1,4 +1,60 @@
-div{
-  padding-top: 40px;
-  height: 200px;
+@import "../../../assets/sass/variable";
+
+.web_home_template {
+  position: relative;
+  z-index: 5;
+  margin-top: -30px;
+
+  .top_section {
+    height: 620px;
+    background: {
+      image: url("assets/img/web/home/top_bg.png");
+      size: cover;
+      repeat: no-repeat;
+      position: center;
+    }
+    .title{
+      padding-top: 150px;
+      width: 650px;
+      margin-left: 80px;
+      h1{
+        margin: 0;
+        font: {
+          family: $OpenSans;
+          size: 36px;
+          weight: 400;
+        }
+        line-height: 42px;
+        color: #FFFFFF;
+      }
+    }
+  ;
+  }
+
+  //media
+
+  @media (min-width: 1500px) {
+
+  }
+
+  @media (min-width: 1200px) and (max-width: 1499px) {
+
+  }
+
+  @media (min-width: 992px) and (max-width: 1200px) {
+
+  }
+
+  @media (min-width: 768px) and (max-width: 992px) {
+
+  }
+
+  @media (min-width: 540px) and (max-width: 768px) {
+
+  }
+
+  @media (max-width: 540px) {
+
+  }
+
 }
