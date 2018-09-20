@@ -9,6 +9,7 @@ import {ModuleRouting} from "./web-routing";
 import {HeaderModule} from "./header/header.module";
 import {AboutModule} from "./about/about.module";
 import {FooterModule} from "./footer/footer.module";
+import {SelectSpecModalComponent} from "./shared/components/select_spec_modal/select_spec_modal.component";
 
 @NgModule({
     imports: [
@@ -21,10 +22,14 @@ import {FooterModule} from "./footer/footer.module";
     ],
     declarations: [
         WebComponent,
-        HomeComponent
+        HomeComponent,
+        SelectSpecModalComponent
     ],
     providers: [
 
+    ],
+    entryComponents: [
+        SelectSpecModalComponent
     ]
 })
 export class WebModule {
