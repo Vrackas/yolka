@@ -10,6 +10,7 @@ import {HeaderModule} from "./header/header.module";
 import {AboutModule} from "./about/about.module";
 import {FooterModule} from "./footer/footer.module";
 import {SelectSpecModalComponent} from "./shared/components/select_spec_modal/select_spec_modal.component";
+import { AccordionModule } from 'ngx-bootstrap/accordion';
 
 @NgModule({
     imports: [
@@ -18,7 +19,8 @@ import {SelectSpecModalComponent} from "./shared/components/select_spec_modal/se
         FormsModule,
         HeaderModule,
         AboutModule,
-        FooterModule
+        FooterModule,
+        AccordionModule.forRoot()
     ],
     declarations: [
         WebComponent,

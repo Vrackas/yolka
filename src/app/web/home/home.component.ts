@@ -35,6 +35,7 @@ export class HomeComponent {
             link: 12
         }
     ];
+    customClass: string = 'customClass';
 
     constructor(private modalService: BsModalService) {
     }

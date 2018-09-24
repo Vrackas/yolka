@@ -70,23 +70,25 @@
             size: cover;
 
           }
-          h4{
+          h4 {
             font: {
               weight: bold;
-            };
+            }
+          ;
             margin-top: -15px;
             margin-bottom: 30px;
             padding-right: 30px;
           }
-          p{
+          p {
             font: {
               size: 15px;
-            };
+            }
+          ;
           }
-          a{
+          a {
             text-decoration: underline;
           }
-          img{
+          img {
             margin: 25px 8px 0;
           }
         }
@@ -98,7 +100,7 @@
           background: {
             image: url("assets/img/web/home/Group_2.png");
           }
-          img{
+          img {
             margin-top: -30px;
           }
         }
@@ -169,6 +171,157 @@
       }
 
     }
+  }
+
+  .third_section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    //margin-top: -10px;
+    max-width: 1500px;
+    margin: -10px auto;
+    .left {
+      width: 40%;
+      display: flex;
+      flex-direction: row;
+      div:nth-child(1) {
+        background: {
+          image: url(assets/img/web/home/third_section_img.png);
+        }
+        width: 152px;
+        height: 152px;
+      }
+      div:nth-child(2) {
+        width: 70%;
+        h4 {
+          margin: 0 0 5px;
+          font: {
+            weight: bold;
+          }
+        ;
+        }
+        p {
+          font-size: 15px;
+        }
+        a {
+          text-decoration: underline;
+        }
+      }
+    }
+    .middle {
+      background: {
+        image: url(assets/img/web/home/third_section.png);
+
+      }
+    ;
+      height: 100%;
+      width: 30px;
+      padding-bottom: 110px;
+    }
+    .right {
+      width: 40%;
+      h4 {
+        margin: 20px 0 10px;
+        font: {
+          weight: bold;
+        }
+      ;
+      }
+    }
+  }
+
+  .how_works_section {
+    background: {
+      image: url(assets/img/web/home/how_works_section.png);
+      repeat: no-repeat;
+      size: cover;
+    }
+    height: auto;
+    margin: 0 auto;
+    width: 990px;
+    margin-top: -70px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    .how_works {
+      padding-top: 150px;
+      margin: 0 auto;
+      h2{
+        text-align: center;
+        font: {
+          weight: bold;
+        };
+        margin-bottom: 40px;
+      }
+      div:nth-child(2) {
+        width: 700px;
+        height: 100px;
+        background: {
+          image: url("assets/img/web/home/how_works.png");
+          size: cover;
+          repeat: no-repeat;
+        }
+      ;
+      }
+      div:nth-child(3){
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        p{
+          width: 125px;
+          font-size: 14px;
+          line-height: 16px;
+          margin-right: 25px;
+          margin-top: 10px;
+        }
+        p:nth-child(5){
+          margin: 0 ;
+        }
+      }
+      a{
+        text-align: center;
+        text-decoration: underline;
+        margin: 20px auto 0;
+        display: block;
+
+      }
+    }
+    .faq{
+      margin-top: 100px;
+      h2{
+        font: {
+          weight: bold;
+        };
+        text-align: center;
+      }
+      div{
+        padding: 0 50px;
+        accordion{
+          transition: .5s;
+          .accordion-group{
+            box-shadow: none;
+            background: #FFFFFF;
+            .panel{
+              box-shadow: none;
+              background: #FFFFFF;
+              //.panel-heading{
+              //  box-shadow: none;
+              //  background: #FFFFFF;
+              //
+              //}
+            }
+            .customClass,
+            .panel,
+            .card{
+              box-shadow: none !important;
+            }
+          }
+
+
+        }
+      }
+    }
+
   }
 
   //media
