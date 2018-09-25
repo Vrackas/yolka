@@ -40,28 +40,28 @@ export class HomeComponent {
         {
             img: '../assets/img/web/home/employee_img_1.png',
             title: 'Елена Горюнова',
-            position: 'уборщица',
+            position: 'специалист по уборке',
             rating: '4,9',
             reviews: 'Отзывов: 12'
         },
         {
             img: '../assets/img/web/home/employee_img_2.png',
             title: 'Эльми Равшанова',
-            position: 'уборщица',
+            position: 'специалист по уборке',
             rating: '4,7',
             reviews: 'Отзывов: 10'
         },
         {
             img: '../assets/img/web/home/employee_img_3.png',
             title: 'Эрика Шпенглер',
-            position: 'уборщица',
+            position: 'специалист по уборке',
             rating: '5,0',
             reviews: 'Отзывов: 16'
         },
         {
             img: '../assets/img/web/home/employee_img_4.png',
             title: 'Чумак Ирина',
-            position: 'химчистка мебели',
+            position: 'специалист по химчистки',
             rating: '4,6',
             reviews: 'Отзывов: 9'
         }];

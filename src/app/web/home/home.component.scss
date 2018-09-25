@@ -17,7 +17,7 @@
     }
     .title {
       padding-top: 150px;
-      width: 650px;
+      width: 525px;
       margin-left: 80px;
       h1 {
         margin: 0;
@@ -101,7 +101,8 @@
             image: url("assets/img/web/home/Group_2.png");
           }
           img {
-            margin-top: -30px;
+            width: 175px;
+            margin: -27px 20px 0;
           }
         }
       }
@@ -495,6 +496,13 @@
   }
 
   .yolka_for_section {
+    h2 {
+      font: {
+        weight: bold;
+      }
+    ;
+      text-align: center;
+    }
     .container {
       .for {
         display: flex;
