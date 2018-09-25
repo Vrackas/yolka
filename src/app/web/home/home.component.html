@@ -246,10 +246,67 @@
     <!--start yolka_for_section-->
 
     <div class="yolka_for_section">
-
+        <div class="container">
+            <div class="for">
+                <div class="for_list" *ngFor="let item of for_list">
+                    <img src="{{item.img}}" alt="">
+                    <h4>{{item.title}}</h4>
+                    <p>{{item.text}}</p>
+                    <a href="">{{item.link}}</a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!--end yolka_for_section-->
 
+    <!--start bottom_section-->
+
+    <div class="bottom_section">
+        <h2>С приложением удобнее!</h2>
+        <div class="first">
+            <div class="left"></div>
+            <div class="right">
+                <div class="top">
+                    <div *ngFor="let item of bottom_top_list">
+                        <img src="../assets/img/web/home/bottom_item_check.png" alt="">
+                        <p>{{item.text}}</p>
+                    </div>
+                </div>
+                <div class="middle">
+                    <a href=""><img src="../assets/img/web/header/google.png" alt=""></a>
+                    <a href=""><img src="../assets/img/web/header/apple.png" alt=""></a>
+                </div>
+                <div class="bottom">
+                    <h4>Получить ссылку:</h4>
+                    <div><input type="number">
+                        <button class="main_button">Получить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="second">
+            <div *ngFor="let item of bottom_middle_list ">
+                <img src="{{item.img}}" alt="">
+                <p>{{item.text}}</p>
+            </div>
+        </div>
+        <div class="third">
+            <div class="left"></div>
+            <div class="right">
+                <h3>Лично гарантирую качество !</h3>
+                <p>Я отвечаю за качество всех наших специалистов. В случаи чего все знают, что любой клиент сразу может написать мне. Открытость - позволила мне и моей команде построить Эко-систему которой мы можем гордиться.</p>
+                <span>Пахомов Дмитрий Евгеньевич. Сооснователь Yolka Home.</span>
+                <div class="social">
+                    <a href=""><i class="fab fa-vk"></i></a>
+                    <a href=""><i class="fab fa-instagram"></i></a>
+                    <a href=""><i class="fab fa-viber"></i></a>
+                </div>
+                <img src="../assets/img/web/home/signature.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <!--end bottom_section-->
 
 </div>
