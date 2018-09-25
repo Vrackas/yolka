@@ -1,8 +1,9 @@
-import {Component, TemplateRef} from '@angular/core';
+import {Component, ElementRef, TemplateRef} from '@angular/core';
 import {BsModalService} from 'ngx-bootstrap/modal';
 import {BsModalRef} from 'ngx-bootstrap/modal/bs-modal-ref.service';
 
 import {SelectSpecModalComponent} from "../shared/components/select_spec_modal/select_spec_modal.component";
+import {element} from "protractor";
 
 
 @Component({
@@ -35,9 +36,37 @@ export class HomeComponent {
             link: 12
         }
     ];
-    customClass: string = 'customClass';
+    employee_list = [
+        {
+            img: '../assets/img/web/home/employee_img_1.png',
+            title: 'Елена Горюнова',
+            position: 'уборщица',
+            rating: '4,9',
+            reviews: 'Отзывов: 12'
+        },
+        {
+            img: '../assets/img/web/home/employee_img_2.png',
+            title: 'Эльми Равшанова',
+            position: 'уборщица',
+            rating: '4,7',
+            reviews: 'Отзывов: 10'
+        },
+        {
+            img: '../assets/img/web/home/employee_img_3.png',
+            title: 'Эрика Шпенглер',
+            position: 'уборщица',
+            rating: '5,0',
+            reviews: 'Отзывов: 16'
+        },
+        {
+            img: '../assets/img/web/home/employee_img_4.png',
+            title: 'Чумак Ирина',
+            position: 'химчистка мебели',
+            rating: '4,6',
+            reviews: 'Отзывов: 9'
+        }];
 
-    constructor(private modalService: BsModalService) {
+    constructor(private modalService: BsModalService, public el: ElementRef) {
     }
 
 
@@ -49,6 +78,20 @@ export class HomeComponent {
             }
 
         });
+    }
+
+    accordionEffect(id: string) {
+        let element = document.getElementById(id);
+        switch (element.classList.contains('active')) {
+            case true:
+                element.classList.remove('active');
+                break;
+            case false:
+                element.classList.add('active');
+                break;
+
+        }
+        console.log(element);
     }
 
 

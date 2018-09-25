@@ -118,19 +118,84 @@
         </div>
         <div class="faq">
             <h2>Часто задаваемые вопросы</h2>
-            <div>
+            <div class="accordion_block">
 
-                <accordion [closeOthers]="true">
-                    <accordion-group heading="Header" [panelClass]="customClass">
-                        This content is straight in the template.
-                    </accordion-group>
-                    <accordion-group heading="Content 1">
-                        <p>Content 1</p>
-                    </accordion-group>
-                    <accordion-group heading="Content 2">
-                        <p>Content 2</p>
-                    </accordion-group>
-                </accordion>
+                <div class="accordion" id="acc1" (click)="accordionEffect('acc1')">
+
+                    <h2>Можно ли заказать услугу и уйти по делам, когда приедет специалист?</h2>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eius eos fugit iure laudantium
+                        molestias necessitatibus provident quae quod. Dignissimos dolorem esse facere harum nesciunt
+                        nobis similique veniam vitae? Vel.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eius eos fugit iure laudantium
+                        molestias necessitatibus provident quae quod. Dignissimos dolorem esse facere harum nesciunt
+                        nobis similique veniam vitae? Vel.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eius eos fugit iure laudantium
+                        molestias necessitatibus provident quae quod. Dignissimos dolorem esse facere harum nesciunt
+                        nobis similique veniam vitae? Vel.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eius eos fugit iure laudantium
+                        molestias necessitatibus provident quae quod. Dignissimos dolorem esse facere harum nesciunt
+                        nobis similique veniam vitae? Vel.</p>
+                </div>
+                <div class="accordion" id="acc2" (click)="accordionEffect('acc2')">
+
+                    <h2>Как оформить подписку на ваши услуги?</h2>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eius eos fugit iure laudantium
+                        molestias necessitatibus provident quae quod. Dignissimos dolorem esse facere harum nesciunt
+                        nobis similique veniam vitae? Vel.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eius eos fugit iure laudantium
+                        molestias necessitatibus provident quae quod. Dignissimos dolorem esse facere harum nesciunt
+                        nobis similique veniam vitae? Vel.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eius eos fugit iure laudantium
+                        molestias necessitatibus provident quae quod. Dignissimos dolorem esse facere harum nesciunt
+                        nobis similique veniam vitae? Vel.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eius eos fugit iure laudantium
+                        molestias necessitatibus provident quae quod. Dignissimos dolorem esse facere harum nesciunt
+                        nobis similique veniam vitae? Vel.</p>
+                </div>
+                <div class="accordion" id="acc3" (click)="accordionEffect('acc3')">
+
+                    <h2>Цена фиксированная?</h2>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eius eos fugit iure laudantium
+                        molestias necessitatibus provident quae quod. Dignissimos dolorem esse facere harum nesciunt
+                        nobis similique veniam vitae? Vel.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eius eos fugit iure laudantium
+                        molestias necessitatibus provident quae quod. Dignissimos dolorem esse facere harum nesciunt
+                        nobis similique veniam vitae? Vel.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eius eos fugit iure laudantium
+                        molestias necessitatibus provident quae quod. Dignissimos dolorem esse facere harum nesciunt
+                        nobis similique veniam vitae? Vel.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eius eos fugit iure laudantium
+                        molestias necessitatibus provident quae quod. Dignissimos dolorem esse facere harum nesciunt
+                        nobis similique veniam vitae? Vel.</p>
+                </div>
+                <div class="accordion" id="acc4" (click)="accordionEffect('acc4')">
+
+                    <h2>Вы работаете как агрегаттор .за что ваш сервис отвечает?</h2>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eius eos fugit iure laudantium
+                        molestias necessitatibus provident quae quod. Dignissimos dolorem esse facere harum nesciunt
+                        nobis similique veniam vitae? Vel.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eius eos fugit iure laudantium
+                        molestias necessitatibus provident quae quod. Dignissimos dolorem esse facere harum nesciunt
+                        nobis similique veniam vitae? Vel.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eius eos fugit iure laudantium
+                        molestias necessitatibus provident quae quod. Dignissimos dolorem esse facere harum nesciunt
+                        nobis similique veniam vitae? Vel.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eius eos fugit iure laudantium
+                        molestias necessitatibus provident quae quod. Dignissimos dolorem esse facere harum nesciunt
+                        nobis similique veniam vitae? Vel.</p>
+                </div>
+                <a href="">Все вопросы ></a>
+            </div>
+        </div>
+        <div class="after">
+            <div class="left_block">
+                <h3>ура!</h3>
+                <p>До вашей первой уборки с YOLKA осталось несколько минут!</p>
+                <button class="main_button">Войти</button>
             </div>
         </div>
 
@@ -138,5 +203,52 @@
 
     <!--end how_works_section-->
 
+    <!--start partners_section-->
+
+    <div class="partners_section">
+        <div class="partners">
+            <h2>Надежные патрнеры YOLKA</h2>
+            <p>Лучшие специалисты августа 2018</p>
+            <div class="employee">
+                <div class="employee_item" *ngFor="let item of employee_list">
+                    <img src="{{item.img}}" alt="">
+                    <h4>{{item.title}}</h4>
+                    <span>{{item.position}}</span>
+                    <div>
+                        <p><i class="fas fa-heart"></i>{{item.rating}}</p>
+                        <p>{{item.reviews}}</p></div>
+                    <button class="main_button">Подробнее</button>
+                </div>
+            </div>
+        </div>
+        <div class="feedback">
+            <h2>Oтзывы клиентов</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cupiditate error explicabo illo labore
+                odio optio quasi quo, sint sunt. Animi debitis dolore facilis ipsa iste, reiciendis vitae. Beatae,
+                dolorum!lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus consectetur corporis
+                cumque cupiditate, dicta esse facere incidunt, ipsa laborum maxime possimus quas quasi quidem ratione
+                recusandae sed velit voluptatibus!lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
+                earum laborum obcaecati ratione saepe vitae voluptates? Ad aperiam distinctio dolorum explicabo nemo
+                nobis nostrum officia, quaerat quod sunt vitae voluptas. Lorem ipsum dolor sit amet, consectetur
+                adipisicing elit. Ad amet consectetur consequatur culpa dicta ea est explicabo fugiat hic labore, magni
+                modi mollitia necessitatibus nesciunt nobis officia perferendis veritatis vero! Lorem ipsum dolor sit
+                amet, consectetur adipisicing elit. Assumenda consequuntur dolorem esse excepturi, id itaque odit
+                officiis saepe tempore vero. Consequuntur dicta, molestiae nulla pariatur repellendus reprehenderit
+                velit veniam voluptate. </p>
+        </div>
+        <div class="bottom">
+            <div class="main_button">выбрать специалиста</div>
+        </div>
+    </div>
+
+    <!--end partners_section-->
+
+    <!--start yolka_for_section-->
+
+    <div class="yolka_for_section">
+
+    </div>
+
+    <!--end yolka_for_section-->
 
 </div>

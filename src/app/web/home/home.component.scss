@@ -234,7 +234,7 @@
     background: {
       image: url(assets/img/web/home/how_works_section.png);
       repeat: no-repeat;
-      size: cover;
+      size: 100%;
     }
     height: auto;
     margin: 0 auto;
@@ -246,11 +246,12 @@
     .how_works {
       padding-top: 150px;
       margin: 0 auto;
-      h2{
+      h2 {
         text-align: center;
         font: {
           weight: bold;
-        };
+        }
+      ;
         margin-bottom: 40px;
       }
       div:nth-child(2) {
@@ -263,22 +264,22 @@
         }
       ;
       }
-      div:nth-child(3){
+      div:nth-child(3) {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        p{
+        p {
           width: 125px;
           font-size: 14px;
           line-height: 16px;
           margin-right: 25px;
           margin-top: 10px;
         }
-        p:nth-child(5){
-          margin: 0 ;
+        p:nth-child(5) {
+          margin: 0;
         }
       }
-      a{
+      a {
         text-align: center;
         text-decoration: underline;
         margin: 20px auto 0;
@@ -286,40 +287,204 @@
 
       }
     }
-    .faq{
+    .faq {
       margin-top: 100px;
-      h2{
+      h2 {
         font: {
           weight: bold;
-        };
+        }
+      ;
         text-align: center;
       }
-      div{
-        padding: 0 50px;
-        accordion{
-          transition: .5s;
-          .accordion-group{
-            box-shadow: none;
-            background: #FFFFFF;
-            .panel{
-              box-shadow: none;
-              background: #FFFFFF;
-              //.panel-heading{
-              //  box-shadow: none;
-              //  background: #FFFFFF;
-              //
-              //}
-            }
-            .customClass,
-            .panel,
-            .card{
-              box-shadow: none !important;
-            }
+      .accordion_block {
+        background: {
+          image: url(assets/img/web/home/how_works_accordion.png);
+          size: 100%;
+        }
+      ;
+        padding: 0 70px 60px;
+
+        .accordion {
+          transition: 1s ease-in;
+          width: 100%;
+          max-height: 50px;
+          height: auto;
+          overflow: hidden;
+          margin: 15px 0 0px;
+          &.active {
+            max-height: 1000px;
+            transition: .5s ease-in;
           }
 
+          h2 {
+            font: {
+              size: 24px;
+              weight: 200;
+            }
+            text-align: left;
+            border-bottom: 1px solid #999999;
+            margin: 0 0 20px;
+            padding: 10px 15px;
+          }
+          p {
+            padding: 0 20px;
+          }
 
         }
+
+        a {
+          color: #999999;
+          text-align: center;
+          margin: 20px auto 0;
+          display: block;
+        }
       }
+    }
+    .after {
+      background: {
+        image: url(assets/img/web/home/after_how_works.png);
+        repeat: no-repeat;
+        size: cover;
+      }
+      height: 700px;
+      margin: 0 auto;
+      width: 990px;
+      position: relative;
+      .left_block {
+        position: absolute;
+        right: -136px;
+        top: -20px;
+        width: 298px;
+        height: 352px;
+        background: {
+          image: url(assets/img/web/home/Group_4.png);
+          size: cover;
+        }
+      ;
+        padding: 45px 54px;
+        text-align: center;
+        h3 {
+          text-transform: uppercase;
+          color: #0099D7;
+          font: {
+            weight: bold;
+            size: 34px;
+          }
+        ;
+        }
+        p {
+          margin: 30px 0;
+        }
+
+      }
+    }
+
+  }
+
+  .partners_section {
+
+    height: auto;
+    margin: 0 auto;
+    width: 990px;
+    margin-top: -500px;
+    h2 {
+      font: {
+        weight: bold;
+      }
+    ;
+      text-align: center;
+    }
+    .partners {
+      padding: 150px 100px;
+      text-align: center;
+      background: {
+        image: url(assets/img/web/home/feedback.png);
+        repeat: no-repeat;
+        size: 100%;
+      }
+      p {
+        color: #999999;
+      }
+      .employee {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 150px;
+        .employee_item {
+          border-radius: 4px;
+          width: 180px;
+          height: 260px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          box-shadow: 0 0 4px 0 rgba(0, 0, 0, .25);
+          padding: 22px;
+          img {
+            height: 136px;
+            width: 136px;
+            box-shadow: 0 0 4px 0 rgba(0, 0, 0, .25);
+            border-radius: 68px;
+            margin-top: -100px;
+          }
+          h4 {
+            font: {
+              size: 15px;
+              weight: bold;
+            }
+            margin: 10px 0 0;
+          }
+          span {
+            color: #999999;
+          }
+          div {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            p {
+              font-size: 14px;
+              svg {
+                color: #EF5350;
+                margin-right: 5px;
+              }
+            }
+            p:nth-child(1) {
+              border: 1px solid #999999;
+              border-radius: 5px;
+              padding: 5px;
+            }
+            p:nth-child(2) {
+              line-height: 30px;
+            }
+          }
+        }
+
+      }
+    }
+    .feedback {
+      background: {
+        image: url(assets/img/web/home/how_works_accordion.png);
+        size:100% calc(100% - 200px);
+        repeat: no-repeat;
+      }
+      padding: 40px 100px;
+      margin-top: -20px;
+      z-index: 2;
+    }
+    .bottom {
+      background: {
+        image: url(assets/img/web/home/feedback_bottom.png);
+        repeat: no-repeat;
+        size: 100%;
+      }
+      z-index: 1;
+      padding: 350px 0 100px;
+      margin-top: -200px;
+      .main_button {
+        text-transform: uppercase;
+        max-width: 170px;
+        margin: 0 auto;
+      }
+
     }
 
   }
