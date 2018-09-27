@@ -1,4 +1,8 @@
 import {Component, HostListener} from '@angular/core';
+import {BsModalService} from 'ngx-bootstrap/modal';
+import {BsModalRef} from 'ngx-bootstrap/modal/bs-modal-ref.service';
+
+import {EntryModalComponent} from "../shared/components/entry_modal/entry_modal.component";
 
 @Component({
     selector: 'app-header',
@@ -6,7 +10,10 @@ import {Component, HostListener} from '@angular/core';
     styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-    constructor() {
+
+    modalRef: BsModalRef;
+
+    constructor(private modalService: BsModalService) {
         // console.log('home Component is loaded');
     }
 
@@ -26,5 +33,14 @@ export class HeaderComponent {
     mouseUp(event) {
         // this.element = document.getElementsByClassName('header_site_wrapper');
         // this.element.classList.remove('active');
+    }
+
+    openModal(): void {
+        this.modalRef = this.modalService.show(EntryModalComponent, {
+            initialState: {
+                data: {}
+            }
+
+        });
     }
 }

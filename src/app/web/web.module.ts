@@ -10,7 +10,8 @@ import {HeaderModule} from "./header/header.module";
 import {AboutModule} from "./about/about.module";
 import {FooterModule} from "./footer/footer.module";
 import {SelectSpecModalComponent} from "./shared/components/select_spec_modal/select_spec_modal.component";
-import { AccordionModule } from 'ngx-bootstrap/accordion';
+import {EntryModalComponent} from "./shared/components/entry_modal/entry_modal.component";
+import {LoginModalComponent} from "./shared/components/login_modal/login_modal.component";
 
 @NgModule({
     imports: [
@@ -20,18 +21,21 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
         HeaderModule,
         AboutModule,
         FooterModule,
-        AccordionModule.forRoot()
     ],
     declarations: [
         WebComponent,
         HomeComponent,
-        SelectSpecModalComponent
+        SelectSpecModalComponent,
+        EntryModalComponent,
+        LoginModalComponent
     ],
     providers: [
 
     ],
     entryComponents: [
-        SelectSpecModalComponent
+        SelectSpecModalComponent,
+        EntryModalComponent,
+        LoginModalComponent
     ]
 })
 export class WebModule {
