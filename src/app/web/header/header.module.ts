@@ -4,13 +4,15 @@ import {HeaderComponent} from './header.component';
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {BrowserModule} from "@angular/platform-browser";
+import {ModalModule} from "ngx-bootstrap";
 
 @NgModule({
     imports: [
         CommonModule,
         BrowserModule,
         FormsModule,
-        RouterModule
+        RouterModule,
+        ModalModule.forRoot(),
     ],
     declarations: [
         HeaderComponent

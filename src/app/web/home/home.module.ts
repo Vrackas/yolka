@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
 // import { AccordionModule } from 'ngx-accordion';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
+import {BsModalService} from 'ngx-bootstrap/modal';
 
 @NgModule({
     imports: [

@@ -6,7 +6,14 @@
   line-height: 16px;
   color: #FFFFFF;
   text-align: center;
-  border: none;
+  border: 1px solid #0099D7;
+  &.inverted{
+    background: transparent;
+    color: #0099D7;
+  }
+}
+.main_button:focus{
+  outline: none !important;
 }
 
   //media
