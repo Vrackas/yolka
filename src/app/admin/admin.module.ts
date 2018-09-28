@@ -1,29 +1,23 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { AdminComponent } from './admin.component';
-import { ModuleRouting } from './admin-routing';
-import { SidebarComponent } from './sidebar/sidebar.component';
-
-import { UserManagementModule } from './user-management/user-management.module';
-import { WebStorageModule } from 'ngx-store';
-import { ProviderListService } from './shared/services/provider-list.service';
-import { NavbareModule } from './navbar/navbar.module';
-
+import { NgModule } from "@angular/core";
+import { WebStorageModule } from "ngx-store";
+import { CommonModule } from "@angular/common";
+import {ModuleRouting} from "./admin-routing";
+import { AdminComponent } from "./admin.component";
+import { SidebarComponent } from "./sidebar/sidebar.component";
+import { CleaningInfoModule } from "./cleaning-info/cleaning-info.modal";
 
 @NgModule({
     imports: [
         WebStorageModule,
         CommonModule,
         ModuleRouting,
-        UserManagementModule,
-        NavbareModule
+        CleaningInfoModule
     ],
     declarations: [
         AdminComponent,
-        SidebarComponent,
+        SidebarComponent
     ],
     providers: [
-        ProviderListService
     ]
 })
 export class AdminModule {

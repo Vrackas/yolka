@@ -1,0 +1,24 @@
+
+
+app-sidebar {
+    float: left;
+}
+
+.account_panel {
+    width: 60%;
+    margin: 0 auto;
+    .main_panel_account {
+        margin-left: 320px;
+        .navbar {
+            height: 50px;
+            p {
+                font: {
+                    size: 24px;
+                    family: 'Open Sans', sans-serif;
+                    weight: bold;
+                }
+                color: #333;
+            }
+        }
+    }
+}

@@ -1,18 +1,15 @@
 import { RouterModule, Routes } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
-import { UserManagementComponent } from './user-management/user-management.component';
 import { AdminComponent } from './admin.component';
+import {CleaningInfoComponent} from "./cleaning-info/cleaning-info.component";
 
 const ADMIN_ROUTING: Routes = [
     {
         path: 'admin',
         component: AdminComponent,
         children: [
-            { path: '', redirectTo: 'user-management', pathMatch: 'full' },
-            {
-                path: 'user-management',
-                component: UserManagementComponent
-            }
+            {path: '', redirectTo: 'cleaning-info', pathMatch: 'full'},
+            {path: 'cleaning-info', component: CleaningInfoComponent}
         ]
     },
 ];
