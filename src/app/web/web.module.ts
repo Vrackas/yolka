@@ -12,6 +12,8 @@ import {FooterModule} from "./footer/footer.module";
 import {SelectSpecModalComponent} from "./shared/components/select_spec_modal/select_spec_modal.component";
 import {EntryModalComponent} from "./shared/components/entry_modal/entry_modal.component";
 import {LoginModalComponent} from "./shared/components/login_modal/login_modal.component";
+import {RegistrationModalComponent} from "./shared/components/registration_modal/registration_modal.component";
+import {ForgotPasswordModalComponent} from "./shared/components/forgot_password_modal/forgot_password_modal.component";
 
 @NgModule({
     imports: [
@@ -27,7 +29,10 @@ import {LoginModalComponent} from "./shared/components/login_modal/login_modal.c
         HomeComponent,
         SelectSpecModalComponent,
         EntryModalComponent,
-        LoginModalComponent
+        LoginModalComponent,
+        RegistrationModalComponent,
+        ForgotPasswordModalComponent
+
     ],
     providers: [
 
@@ -35,7 +40,9 @@ import {LoginModalComponent} from "./shared/components/login_modal/login_modal.c
     entryComponents: [
         SelectSpecModalComponent,
         EntryModalComponent,
-        LoginModalComponent
+        LoginModalComponent,
+        RegistrationModalComponent,
+        ForgotPasswordModalComponent
     ]
 })
 export class WebModule {
