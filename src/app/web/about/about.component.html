@@ -1,5 +1,83 @@
 <div class="web_about_template">
 
-    <h2>Yolka</h2>
+    <!--start top_section-->
+
+    <div class="top_section">
+        <div class="container">
+            <div class="title">
+                <h1>Мы создаем возможности, заставляя мир жить лучше и экономить свое время на домашних делах</h1>
+            </div>
+        </div>
+
+    </div>
+
+    <!--end top_section-->
+
+
+    <!--start second_section-->
+
+    <div class="second_section">
+        <p>Из простой функции заказа в 2 клика и удобного выбора специалиста – выросла целая сеть связей между людьми,
+            которая в будущем будет взаимодействовать по всему миру.</p>
+    </div>
+
+    <!--end second_section-->
+
+    <!--start third_section-->
+
+    <div class="third_section">
+        <div class="container">
+            <div></div>
+            <div>
+                <h4>Наши услуги</h4>
+                <p>Бытовые и не только. Помогать Вам в домашних делах – не единственная задача Yolka. Мы так же работаем
+                    под воплощением самых передовых идей. Делаем робота для домашней уборки. Упрощаем доставку товаров
+                    для дома и еще много чего интересного</p>
+                <button class="main_button">Выбрать специалиста</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!--end third_section-->
+
+
+    <!--start advantages_section-->
+
+    <div class="advantages_section">
+        <div class="container">
+            <h2>Наши преимущества</h2>
+            <div class="advantages_list">
+                <div class="advantages_item" *ngFor="let item of advantages_list">
+                    <img src="{{item.img}}" alt="">
+                    <h4>{{item.title}}</h4>
+                    <p>{{item.text}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--end advantages_section-->
+
+    <!--start bottom_section-->
+
+    <div class="bottom_section">
+        <div class="container">
+            <h2>Основатели</h2>
+            <div class="founders_list">
+                <div class="founders_item" *ngFor="let item of founders_list">
+                    <img src="{{item.img}}" alt="">
+                    <h4>{{item.name}}</h4>
+                    <a href="mailto:{{item.mail}}">{{item.mail}}</a>
+                    <div>
+                        <a href="{{item.link_vk}}"><i class="fab fa-vk"></i></a>
+                        <a href="{{item.link_insta}}"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--end bottom_section-->
 
 </div>
