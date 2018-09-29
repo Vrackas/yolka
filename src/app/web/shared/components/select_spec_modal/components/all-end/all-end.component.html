@@ -1,0 +1,159 @@
+<div class="modal-header">
+    <!--<h4 class="modal-title pull-left">{{title}}</h4>-->
+    <button style="margin-top: -5px;" type="button" class="pull-left" (click)="back()">
+        <span aria-hidden="true">
+            <i class="fas fa-arrow-left"></i>
+        </span>
+    </button>
+    <div class="custom_tabs">
+        <ul>
+            <li [ngClass]="data.all_end_count == 1 ? 'active' : false">1</li>
+            <li [ngClass]="data.all_end_count == 2 ? 'active' : false">2</li>
+            <li [ngClass]="data.all_end_count == 3 ? 'active' : false">3</li>
+        </ul>
+    </div>
+    <!-- <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+    </button> -->
+</div>
+<div class="modal-body">
+    <div class="first" [ngSwitch]="data.all_end_count">
+        <form *ngSwitchCase="1" (ngSubmit)="next()" #RepairFormFirst="ngForm">
+            <div class="form-group">
+                <label for="bring">Что принесты?:</label>
+                <div style="height: auto;" class="form-control">
+                    <label class="input_container">
+                        <input type="radio" name="bring" value="пылесос" [(ngModel)]="data.bring" #bring="ngModel">пылесос
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="input_container">
+                        <input type="radio" name="bring" value="стремянка" [(ngModel)]="data.bring" #bring="ngModel">стремянка
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="input_container">
+                        <input type="radio" name="bring" value="другое" [(ngModel)]="data.bring" #bring="ngModel">другое
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="key">Нужен ли забор/доставка ключей?:</label>
+                <div style="height: auto;" class="form-control">
+                    <label class="input_container">
+                        <input type="radio" name="key" value="Да" [(ngModel)]="data.key" #key="ngModel">Да
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="input_container">
+                        <input type="radio" name="key" value="Нет" [(ngModel)]="data.key" #key="ngModel">Нет
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="form-group" *ngIf="data.key === 'Да'">
+                <label for="key_yes_from">Адрес забора ключей</label>
+                <label>
+                    <input type="text" name="key_yes_from" [(ngModel)]="data.key_yes_from" #key_yes_from="ngModel" required>
+                </label>
+            </div>
+            <div class="form-group" *ngIf="data.key === 'Да'">
+                <label for="key_yes_to">Адрес достваки ключей</label>
+                <label>
+                    <input type="text" name="key_yes_to" [(ngModel)]="data.key_yes_to" #key_yes_to="ngModel" required>
+                </label>
+            </div>
+            <div class="form-group">
+                <label for="comments">Коментарий к заказу (то что мы у вас не уточнили):</label>
+                <div style="height: auto;">
+                    <label>
+                        <textarea rows="3" cols="90" type="text" name="comments" [(ngModel)]="data.comments" #comments="ngModel"></textarea>
+                    </label>
+                </div>
+            </div>
+            <button type="submit" [disabled]="RepairFormFirst.form.invalid" class="main_button">Далее</button>
+        </form>
+
+        <form *ngSwitchCase="2" (ngSubmit)="next()" #RepairFormSecond="ngForm">
+            <div style="text-align: left;" class="form-group">
+                <label for="start_work">Когда приступить к работе:</label>
+                <div style="height: auto;" class="form-control">
+                    <label class="input_container">
+                        <input type="radio" name="start_work" value="как можно быстрее, сегодня или завтра" [(ngModel)]="data.start_work" #start_work="ngModel"
+                            required>как можно быстрее, сегодня или завтра
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="input_container">
+                        <input type="radio" name="start_work" value="в течении нескольких дней" [(ngModel)]="data.start_work" #start_work="ngModel"
+                            required>в течении нескольких дней
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="input_container">
+                        <input type="radio" name="start_work" value="выберу день в календаре" [(ngModel)]="data.start_work" #start_work="ngModel"
+                            required>выберу день в календаре
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="input_container">
+                        <input type="radio" name="start_work" value="договорюсь со специалистом позже" [(ngModel)]="data.start_work" #start_work="ngModel"
+                            required>договорюсь со специалистом позже
+                        <span class="checkmark"></span>
+                    </label>
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="mony">Оцените диапазон ожидаемой стоимости (можно пропустить):</label>
+                <div style="height: auto;" class="form-control">
+                    <label>от</label>
+                    <label>
+                        <input style="width: 265px;" type="number" name="mony_from" [(ngModel)]="data.mony_from" #mony_from="ngModel">
+                    </label>
+                    <label>од</label>
+                    <label>
+                        <input style="width: 265px;" type="number" name="mony_to" [(ngModel)]="data.mony_to" #mony_to="ngModel">
+                    </label>
+                </div>
+            </div>
+            <div style="text-align: center;" class="form-group">
+                <div style="height: auto;" class="form-control">
+                    <label>район или город облсти</label>
+                    <label>
+                        <input style="width: 265px;" type="text" name="where_city" [(ngModel)]="data.where_city" #where_city="ngModel" required="">
+                    </label>
+                    <label>адрес: ул., дом., корпус., квартира</label>
+                    <label>
+                        <input style="width: 265px;" type="text" name="where_address" [(ngModel)]="data.where_address" #where_address="ngModel" required="">
+                    </label>
+                </div>
+            </div>
+            <button type="submit" [disabled]="RepairFormSecond.form.invalid" class="main_button">Далее</button>
+        </form>
+
+        <form *ngSwitchCase="3" (ngSubmit)="finish()" #RepairFormTherd="ngForm">
+            <div class="form-group">
+                <label for="end">Заказ готов к публикации:</label>
+                <div style="height: auto;" class="form-control">
+                    <label for="phone">номер телефона</label>
+                    <input style="width: 265px;" type="text" name="phone" [(ngModel)]="data.phone" #phone="ngModel" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div style="height: auto;" class="form-control">
+                    <label for="username">Имя и отчество</label>
+                    <input style="width: 265px;" type="text" name="username" [(ngModel)]="data.username" #username="ngModel" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div style="height: auto;" class="form-control">
+                    <label for="email">эл.почта (по желанию)</label>
+                    <input style="width: 265px;" type="email" name="email" [(ngModel)]="data.email" #email="ngModel">
+                </div>
+            </div>
+            <button type="submit" [disabled]="RepairFormTherd.form.invalid" class="main_button">Далее</button>
+        </form>
+    </div>
+</div>

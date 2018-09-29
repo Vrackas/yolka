@@ -1,0 +1,48 @@
+.sub_menu {
+  width: 220px;
+  height: 507px;
+  ul {
+    .title_sidbar_block {
+      font: {
+        size: 24px;
+        weight: bold;
+        family: 'Open Sans', sans-serif;
+      }
+      color: #0099D7;
+    }
+    li {
+      margin-top: 20px;
+      height: 46px;
+      border-bottom: {
+        color: #C4C4C4;
+        width: 1px;
+        style: solid;
+      }
+      a {
+        padding: 0 !important;
+        position: relative;
+        i {
+
+        }
+        p {
+          font: {
+            size: 18px;
+            weight: 400;
+            family: 'Open Sans', sans-serif;
+          }
+          color: #555555;
+        }
+        .shape {
+          position: absolute;
+          top: 10px;
+          right: 20px;
+          background: {
+            image: url(assets/img/admin/shape.svg);
+          }
+          height: 8px;
+          width: 5px;
+        }
+      }
+    }
+  }
+}  

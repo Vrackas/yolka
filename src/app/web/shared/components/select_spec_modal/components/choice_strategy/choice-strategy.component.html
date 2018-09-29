@@ -1,0 +1,207 @@
+<div class="modal-header">
+    <!-- <h4 class="modal-title pull-left">{{title}}</h4> -->
+    <button style="margin-top: -5px;" type="button" class="pull-left" (click)="back()">
+        <span aria-hidden="true">
+            <i class="fas fa-arrow-left"></i>
+        </span>
+    </button>
+    <div class="custom_tabs">
+        <ul>
+            <li [ngClass]="data.chois_count == 1 ? 'active' : false">1</li>
+            <li [ngClass]="data.chois_count == 2 ? 'active' : false">2</li>
+        </ul>
+    </div>
+    <!-- <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+    </button> -->
+</div>
+<div class="modal-body">
+
+    <div class="first" [ngSwitch]="data.chois_count">
+        <form *ngSwitchCase="1" (ngSubmit)="next()" #RepairFormFirst="ngForm">
+            <div class="form-group">
+                <label for="count_room">Сколько жилых комнат:</label>
+                <div class="form-control">
+                    <label class="input_container">
+                        <input type="radio" name="count_room" value="1" [(ngModel)]="data.room_count" #count_room="ngModel" required>1
+                        <span class="checkmark"></span>
+
+                    </label>
+
+                    <label class="input_container">
+                        <input type="radio" name="count_room" value="2" [(ngModel)]="data.room_count" #count_room="ngModel" required>2
+                        <span class="checkmark"></span>
+
+                    </label>
+
+                    <label class="input_container">
+                        <input type="radio" name="count_room" value="3" [(ngModel)]="data.room_count" #count_room="ngModel" required>3
+                        <span class="checkmark"></span>
+
+                    </label>
+
+                    <label class="input_container">
+                        <input type="radio" name="count_room" value="4" [(ngModel)]="data.room_count" #count_room="ngModel" required>4
+                        <span class="checkmark"></span>
+
+                    </label>
+
+                    <label class="input_container">
+                        <input type="radio" name="count_room" value="5" [(ngModel)]="data.room_count" #count_room="ngModel" required>5
+                        <span class="checkmark"></span>
+
+                    </label>
+
+                    <label class="input_container">
+                        <input type="radio" name="count_room" value="6" [(ngModel)]="data.room_count" #count_room="ngModel" required>6
+                        <span class="checkmark"></span>
+
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="square">Общая площадь убираемого помещения:</label>
+                <div style="height: auto" class="form-control">
+                    <label class="input_container" *ngIf="data.home == 'Квартира'">
+                        <input type="radio" name="square" value="до 50кв" [(ngModel)]="data.square" #square="ngModel" required>до 50кв
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="input_container">
+                        <input type="radio" name="square" value="до 70кв" [(ngModel)]="data.square" #square="ngModel" required>до 70кв
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="input_container" *ngIf="data.home == 'Квартира'">
+                        <input type="radio" name="square" value="до 90кв" [(ngModel)]="data.square" #square="ngModel" required>до 90кв
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="input_container" *ngIf="data.home == 'Коттедж'">
+                        <input type="radio" name="square" value="до 100кв" [(ngModel)]="data.square" #square="ngModel" required>до 100кв
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="input_container" *ngIf="data.home == 'Квартира'">
+                        <input type="radio" name="square" value="до 120кв" [(ngModel)]="data.square" #square="ngModel" required>до 120кв
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="input_container" *ngIf="data.home == 'Квартира'">
+                        <input type="radio" name="square" value="свыше 120кв" [(ngModel)]="data.square" #square="ngModel" required>свыше 120кв
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="input_container" *ngIf="data.home == 'Коттедж'">
+                        <input type="radio" name="square" value="до 130кв" [(ngModel)]="data.square" #square="ngModel" required>до 130кв
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="input_container" *ngIf="data.home == 'Коттедж'">
+                        <input type="radio" name="square" value="до 170кв" [(ngModel)]="data.square" #square="ngModel" required>до 170кв
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="input_container" *ngIf="data.home == 'Коттедж'">
+                        <input type="radio" name="square" value="до 200кв" [(ngModel)]="data.square" #square="ngModel" required>до 200кв
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="form-group" *ngIf="data.home == 'Коттедж'">
+                <label for="count_bath">Количество сан.узлов:</label>
+                <div class="form-control">
+                    <label class="input_container">
+                        <input type="radio" name="count_bath" value="1" [(ngModel)]="data.count_bath" #count_bath="ngModel" required>1
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="input_container">
+                        <input type="radio" name="count_bath" value="2" [(ngModel)]="data.count_bath" #count_bath="ngModel" required>2
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="input_container">
+                        <input type="radio" name="count_bath" value="3" [(ngModel)]="data.count_bath" #count_bath="ngModel" required>3
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="input_container">
+                        <input type="radio" name="count_bath" value="4" [(ngModel)]="data.count_bath" #count_bath="ngModel" required>4
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="stairs">Количество лесниц:</label>
+                <div class="form-control">
+                    <label class="input_container">
+                        <input type="radio" name="stairs" value="1" [(ngModel)]="data.stairs" #stairs="ngModel" required>1
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="input_container">
+                        <input type="radio" name="stairs" value="2" [(ngModel)]="data.stairs" #stairs="ngModel" required>2
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="input_container">
+                        <input type="radio" name="stairs" value="3" [(ngModel)]="data.stairs" #stairs="ngModel" required>3
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+            <button type="submit" [disabled]="RepairFormFirst.form.invalid" class="main_button">Далее</button>
+        </form>
+
+        <form *ngSwitchCase="2" (ngSubmit)="next()" #RepairFormSecond="ngForm">
+            <div class="form-group">
+                <label for="pollution">Оцените степень загрязнения:</label>
+                <div style="height: auto; text-align: left;" class="form-control">
+                    <label class="input_container">
+                        <input type="radio" name="pollution" value="только строительная пыль" [(ngModel)]="data.pollution" #pollution="ngModel" required>только строительная пыль
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="input_container">
+                        <input type="radio" name="pollution" value="строительная пыль и не большие следы затирки" [(ngModel)]="data.pollution" #pollution="ngModel"
+                            required>строительная пыль и не большие следы затирки
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="input_container">
+                        <input type="radio" name="pollution" value="строительная пыль и сильные загрязнения, такие как: краска, затирка, клей, скотч, бетон..."
+                            [(ngModel)]="data.pollution" #pollution="ngModel" required>строительная пыль и сильные загрязнения, такие как: краска, затирка, клей, скотч, бетон...
+                        <span
+                            class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <!-- <label for="windows">:</label> -->
+                <div style="height: auto; text-align: left;" class="form-control">
+                    <label class="input_container">
+                        <input type="radio" name="windows" value="1" [(ngModel)]="data.windows" #windows="ngModel" required>с окнами и балконом
+                        <span class="checkmark"></span>
+
+                    </label>
+                    <label class="input_container">
+                        <input type="radio" name="windows" value="2" [(ngModel)]="data.windows" #windows="ngModel" required>без окон и балконов
+                        <span class="checkmark"></span>
+
+                    </label>
+
+                    <label class="input_container">
+                        <input type="radio" name="pollution" value="строительная пыль и сильные загрязнения, такие как: краска, затирка, клей, скотч, бетон..."
+                            [(ngModel)]="data.pollution" #pollution="ngModel" required>строительная пыль и сильные загрязнения, такие как: краска, затирка, клей, скотч, бетон...
+                        <span
+                            class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+            <button type="submit" [disabled]="RepairFormSecond.form.invalid" class="main_button">Далее</button>
+        </form>
+    </div>
+
+
+</div>

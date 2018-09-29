@@ -1,8 +1,8 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {HomeComponent} from './home.component';
-import {FormsModule} from '@angular/forms';
-import {ModalModule} from 'ngx-bootstrap/modal';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { HomeComponent } from './home.component';
+import { FormsModule } from '@angular/forms';
+import { ModalModule } from 'ngx-bootstrap/modal';
 // import { AccordionModule } from 'ngx-accordion';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import {BsModalService} from 'ngx-bootstrap/modal';

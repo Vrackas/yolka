@@ -4,6 +4,8 @@ import {CommonModule} from '@angular/common';
 import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
 import {WebComponent} from "./web.component";
+import {CleaningInfoComponent} from "../admin/cleaning-info/cleaning-info.component";
+import { AdminComponent } from '../admin/admin.component';
 
 
 const WEB_ROUTING: Routes = [
@@ -19,6 +21,14 @@ const WEB_ROUTING: Routes = [
             {
                 path: 'about',
                 component: AboutComponent
+            },
+            {
+                path: 'admin',
+                component: AdminComponent,
+                children: [
+                    {path: '', redirectTo: 'cleaning-info', pathMatch: 'full'},
+                    {path: 'cleaning-info', component: CleaningInfoComponent}
+                ]
             }
 
         ]
