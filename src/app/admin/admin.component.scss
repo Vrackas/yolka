@@ -9,6 +9,7 @@ app-sidebar {
     margin: 0 auto;
     .main_panel_account {
         margin-left: 320px;
+        min-height: calc(100vh - 423px);
         .navbar {
             height: 50px;
             p {
