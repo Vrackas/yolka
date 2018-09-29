@@ -4,8 +4,8 @@ import {CommonModule} from '@angular/common';
 import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
 import {WebComponent} from "./web.component";
-import {AdminComponent} from '../admin/admin.component';
 import {CleaningInfoComponent} from "../admin/cleaning-info/cleaning-info.component";
+import { AdminComponent } from '../admin/admin.component';
 
 
 const WEB_ROUTING: Routes = [

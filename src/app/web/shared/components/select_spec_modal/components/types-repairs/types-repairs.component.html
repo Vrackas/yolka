@@ -1,0 +1,78 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">{{title}}</h4>
+    <!-- <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+    </button> -->
+</div>
+<div class="modal-body">
+    <form (ngSubmit)="next()" #RepairForm="ngForm">
+        <div class="form-group">
+            <!-- <label for="name">Имя</label> -->
+            <select (change)="select($event.target.value)" id="name" [(ngModel)]="data.repair" name="name"
+                    #name="ngModel" required>
+                <option *ngFor="let repair of repairs" value="{{repair.id}}">{{repair.name}}</option>
+            </select>
+            <div [hidden]="name.valid || name.pristine" class="valid_form_error">
+                Выберите тип уборки
+            </div>
+        </div>
+        <div class="block_info" *ngIf="data.count !== 0">
+            <div class="sub_info">
+                <h2>Что входит в тариф / время уборки:</h2>
+                <h3>В жилых комнатах / кухнях</h3>
+                <ul>
+                    <li>обеспыливание всех поверхностей,
+                    </li>
+                    <li>обеспыливание стен и потолков (включая осветительные приборы),
+                    </li>
+                    <li>чистка фурнитуры, двери и дверные короба,
+                    </li>
+                    <li>мойка полов и плинтусов,
+                    </li>
+                    <li>мойка подоконников и радиаторов,
+                    </li>
+                    <li>удаление мелкого строительного мусора (вывоз мусора не входит в стоимость работ),
+                    </li>
+                    <li>влажная уборка всех наружных и внутренних поверхностей корпусной мебели (пустых),
+                    </li>
+                    <li>чиста текстильной обивки мебели с использованием пылесоса
+                    </li>
+                </ul>
+                <h3>В сан / узле:</h3>
+                <ul>
+                    <li>очистка радиаторов отопления и труб,
+                    </li>
+                    <li>чистка и дезинсекция сан.техники,
+                    </li>
+                    <li>мойка полов и плинтусов,
+                    </li>
+                    <li>стены и потолки
+                    </li>
+                </ul>
+                <h2>Что не входит в тарифи:</h2>
+                <ul>
+                    <li>химичиская чистка ковров и мягкой мебели,
+                    </li>
+                    <li>мойка осветительных приборов на высоте более 4-ч метров от уровня пола,
+                    </li>
+                    <li>мойка окон, ветражей, балконов
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="form-group">
+            <!-- <label for="name">Имя</label> -->
+            <label class="input_container"> <input type="radio" name="home" value="Квартира" [(ngModel)]="data.home" #home="ngModel" required>Квартира
+                <span class="checkmark"></span>
+            </label>
+            <label class="input_container"> <input type="radio" name="home" value="Коттедж" [(ngModel)]="data.home" #home="ngModel">Коттедж
+                <span class="checkmark"></span>
+            </label>
+            <div [hidden]="name.valid || name.pristine" class="valid_form_error">
+                Выберите тип уборки
+            </div>
+        </div>
+        <button type="submit" [disabled]="RepairForm.form.invalid" class="main_button">Далее</button>
+    </form>
+
+</div>

@@ -112,7 +112,7 @@ export class HomeComponent {
     openModal(): void {
         this.modalRef = this.modalService.show(SelectSpecModalComponent, {
             initialState: {
-                title: 'THIS IS MODAL',
+                title: 'Виды уборки',
                 data: {}
             }
 

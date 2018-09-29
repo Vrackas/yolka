@@ -1,0 +1,9 @@
+.close{
+    position: absolute;
+    top: 0px;
+    font-size: 40px;
+    right: 15px;
+    &:focus {
+        outline: none;
+    }
+}
