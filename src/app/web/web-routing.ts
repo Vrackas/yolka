@@ -6,6 +6,7 @@ import {AboutComponent} from './about/about.component';
 import {WebComponent} from "./web.component";
 import {CleaningInfoComponent} from "../admin/cleaning-info/cleaning-info.component";
 import { AdminComponent } from '../admin/admin.component';
+import {SpecialistsComponent} from "./specialists/specialists.component";
 
 
 const WEB_ROUTING: Routes = [
@@ -21,6 +22,10 @@ const WEB_ROUTING: Routes = [
             {
                 path: 'about',
                 component: AboutComponent
+            },
+            {
+                path: 'specialists',
+                component: SpecialistsComponent
             },
             {
                 path: 'admin',

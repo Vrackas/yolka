@@ -1,0 +1,122 @@
+@import "../../../assets/sass/variable";
+
+.web_specialists_template {
+  position: relative;
+  z-index: 5;
+  margin-top: -30px;
+  background: #FFFFFF;
+
+  .top_section {
+    height: 500px;
+    background: {
+      image: url("assets/img/web/specialists/top_bg.png");
+      size: cover;
+      repeat: no-repeat;
+      position: center;
+    }
+    position: relative;
+
+    .title {
+      padding-top: 150px;
+      width: 800px;
+      margin-left: 80px;
+      h1 {
+        margin: 0;
+        font: {
+          family: $OpenSans;
+          size: 36px;
+          weight: 600;
+        }
+        line-height: 42px;
+        color: #FFFFFF;
+      }
+      button {
+        margin-top: 80px;
+      }
+    }
+  }
+
+  .advantages_section {
+    .container {
+      padding-top: 80px;
+      h2 {
+        font: {
+          weight: bold;
+        }
+      ;
+        text-align: center;
+      }
+      .advantages_list{
+
+      }
+    }
+  }
+
+  //media
+
+  @media (min-width: 1500px) {
+
+  }
+
+  @media (min-width: 1200px) and (max-width: 1499px) {
+
+  }
+
+  @media (min-width: 992px) and (max-width: 1200px) {
+    .top_section {
+      .title {
+        width: inherit;
+        margin-left: inherit;
+        text-align: center;
+      }
+
+    }
+
+  }
+
+  @media (min-width: 768px) and (max-width: 992px) {
+    .top_section {
+      .title {
+        width: inherit;
+        margin-left: inherit;
+        text-align: center;
+      }
+      .smile {
+        margin-left: 0;
+        background-image: none;
+        width: inherit;
+        height: inherit;
+        text-align: center;
+      }
+
+    }
+
+  }
+
+  @media (min-width: 540px) and (max-width: 768px) {
+    .top_section {
+      .title {
+        width: inherit;
+        margin-left: inherit;
+        text-align: center;
+      }
+    }
+
+  }
+
+  @media (max-width: 540px) {
+    .top_section {
+      .title {
+        width: inherit;
+        margin-left: inherit;
+        text-align: center;
+        h1 {
+          font-size: 20px;
+          line-height: 28px;
+        }
+      }
+
+    }
+
+  }
+}

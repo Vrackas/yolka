@@ -8,25 +8,27 @@
   background: #FFFFFF;
 
   .top_section {
-    height: 520px;
+    min-height: 450px;
+    max-height: 750px;
+    height: calc(100vh - 170px);
     background: {
       image: url("assets/img/web/home/top_bg.png");
       size: cover;
       repeat: no-repeat;
       position: center;
     }
-    //position: relative;
+    position: relative;
 
     .title {
       padding-top: 150px;
-      width: 525px;
+      width: 535px;
       margin-left: 80px;
       h1 {
         margin: 0;
         font: {
           family: $OpenSans;
           size: 36px;
-          weight: 400;
+          weight: 600;
         }
         line-height: 42px;
         color: #FFFFFF;
@@ -34,7 +36,8 @@
     }
     .smile {
       margin-left: 70px;
-      margin-top: 20px;
+      position: absolute;
+      bottom: 15px;
       width: 300px;
       height: 200px;
       background: {
@@ -103,12 +106,14 @@
           }
         }
         div:nth-child(1) {
-          margin-top: -82px;
-          height: 540px;
+          position: relative;
+          margin-top: -20px;
+          height: 480px;
           width: 280px;
-          padding-top: 120px;
+          padding-top: 57px;
           background: {
             image: url("assets/img/web/home/Group_2.png");
+            position: bottom;
           }
           img {
             width: 175px;
@@ -165,6 +170,7 @@
             margin: 14px 0;
             text-transform: uppercase;
             font-size: 19px;
+            font-weight: bold;
           }
 
           .main_button {
@@ -235,6 +241,9 @@
     }
     .right {
       width: 40%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       h4 {
         margin: 20px 0 10px;
         font: {
@@ -695,8 +704,8 @@
   @media (min-width: 1400px) {
     .advantage_section {
       .first {
-      .container {
-        width: 1300px;
+        .container {
+          width: 1300px;
 
           //div:nth-child(2),
           //div:nth-child(3),
@@ -777,6 +786,7 @@
 
   @media (min-width: 992px) and (max-width: 1200px) {
     .top_section {
+      height: 520px;
       .title {
         width: inherit;
         margin-left: inherit;
@@ -788,6 +798,8 @@
         width: inherit;
         height: inherit;
         text-align: center;
+        position: inherit;
+        margin-top: 30px;
       }
 
     }
@@ -848,6 +860,7 @@
 
   @media (min-width: 768px) and (max-width: 992px) {
     .top_section {
+      height: 520px;
       .title {
         width: inherit;
         margin-left: inherit;
@@ -859,8 +872,9 @@
         width: inherit;
         height: inherit;
         text-align: center;
+        position: inherit;
+        margin-top: 30px;
       }
-
     }
     .advantage_section {
       .first {
@@ -955,6 +969,7 @@
 
   @media (min-width: 540px) and (max-width: 768px) {
     .top_section {
+      height: 520px;
       .title {
         width: inherit;
         margin-left: inherit;
@@ -966,6 +981,8 @@
         width: inherit;
         height: inherit;
         text-align: center;
+        position: inherit;
+        margin-top: 30px;
       }
 
     }
@@ -1114,6 +1131,7 @@
 
   @media (max-width: 540px) {
     .top_section {
+      height: 450px;
       .title {
         width: inherit;
         margin-left: inherit;
@@ -1125,6 +1143,8 @@
         width: inherit;
         height: inherit;
         text-align: center;
+        position: inherit;
+        margin-top: 30px;
       }
 
     }
