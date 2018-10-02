@@ -17,6 +17,9 @@ import { AdminModule } from '../admin/admin.module';
 import { ComponentsRepairsModalModule } from './shared/components/select_spec_modal/components/components-repairs-modal.modal';
 import {SpecialistsModule} from "./specialists/specialists.module";
 
+import { RoleGuardService } from '../shared/guard/role-guard.service';
+import { SelectSpecialistModule } from './select-specialist/select-specialist.module';
+import { SelectSpecialistSecondModule } from './select-specialist-second/select-specialist-second.module';
 
 @NgModule({
     imports: [
@@ -29,7 +32,9 @@ import {SpecialistsModule} from "./specialists/specialists.module";
         FooterModule,
         ModalModule.forRoot(),
         AdminModule,
-        ComponentsRepairsModalModule
+        ComponentsRepairsModalModule,
+        SelectSpecialistModule,
+        SelectSpecialistSecondModule
     ],
     declarations: [
         WebComponent,
@@ -41,7 +46,7 @@ import {SpecialistsModule} from "./specialists/specialists.module";
         ForgotPasswordModalComponent
     ],
     providers: [
-
+        RoleGuardService
     ],
     entryComponents: [
         SelectSpecModalComponent,

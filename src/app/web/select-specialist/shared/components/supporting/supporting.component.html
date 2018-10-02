@@ -1,0 +1,444 @@
+<div class="modal-body">
+
+    <form class="col" (ngSubmit)="next()" #RepairForm="ngForm">
+
+        <div class="form-group">
+            <label for="name">Выбор помещения</label>
+            <select id="name" [(ngModel)]="data.home" name="name"
+                    #name="ngModel" required>
+                <option value="1">Квартира</option>
+                <option value="2">Коттедж/дом</option>
+            </select>
+        </div>
+
+        <div *ngIf="data.home == 1 || data.home == 2">
+            <div class="block_info">
+                <div class="sub_info">
+                    <h2>Что вхоит в уборку:</h2>
+                    <h3>В жилых комнатах:</h3>
+                    <ul>
+                        <li>протираем пыль со всех доступных поверхностей (не отчищаем от загрязнений)</li>
+                        <li>собираем вещи и расставляем их по местам</li>
+                        <li>картины, зеркала (не большого размера стандартной картины), часы</li>
+                        <li>подоконники и радиаторы</li>
+                        <li>заправляем кровать или диван (пылесосим диван, если нужно)</li>
+                        <li>фурнитура</li>
+                        <li>двери и дверные короба</li>
+                        <li>полы и плинтуса</li>
+                    </ul>
+                    <h3>На кухне</h3>
+                    <ul>
+                        <li>протирается пыль со всех доступных поверхностей</li>
+                        <li>полы и плинтуса</li>
+                        <li>подоконники и радиаторы</li>
+                    </ul>
+                    <h3>Сан.узел</h3>
+                    <ul>
+                        <li>чистится и дезинфицируется унитаз</li>
+                        <li>протирается раковина</li>
+                        <li>моются полы и плинтуса</li>
+                    </ul>
+                    <h3>не выходит</h3>
+                    <ul>
+                        <li>не отчищаем кух. гарнитур и быт. технику от жира и прочих загрязнений</li>
+                        <li>не моется ванна/душевая/стены в сан.узле</li>
+                        <li>не чистим смесители, а раковину просто протираем</li>
+                        <li>не моем посуду</li>
+                        <li>не моем окна и балконы</li>
+                        <li>стены и потолки</li>
+                        <li>внутри шкафов и электроприборов</li>
+                    </ul>
+                    <h2>ВНИМАНИЕ:</h2>
+                    <P>данный тариф является простой влажной уборкой, в котором поверхности не отчищаются от различных
+                        загрязнений</P>
+                    <h2>Регламент по времени:</h2>
+                    <ul>
+                        <li>1к - 1час - 2 часа</li>
+                        <li>2к - 1,5 - 3 часа</li>
+                        <li>3к - 2- 4 часа</li>
+                        <li>4к -3 - 4,5 часа</li>
+                        <li>5к - 3 - 5 часов</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="additionalServices">Доп. услуги</label>
+                <select id="additionalServices" [(ngModel)]="data.additionalServices" name="additionalServices"
+                        #name="ngModel" required>
+                    <option value="1">Да</option>
+                    <option value="2">Нет</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="livingRoom">Сколько жилых комнат</label>
+                <select id="livingRoom" [(ngModel)]="data.livingRoom" name="livingRoom"
+                        #name="ngModel" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+            </div>
+
+            <div class="form-group" *ngIf="data.home == 2">
+                <label for="square">Сколько квадратов:</label>
+                <select id="square" [(ngModel)]="data.square" name="square"
+                        #name="ngModel" required>
+                    <option value="1">до 70</option>
+                    <option value="2">до 100</option>
+                    <option value="3">до 130</option>
+                    <option value="4">до 170</option>
+                    <option value="5">до 200</option>
+                </select>
+            </div>
+
+            <div class="form-group" *ngIf="data.home == 1">
+                <label for="area">Общая площадь убираемого помещения:</label>
+                <select id="area" [(ngModel)]="data.area" name="area"
+                        #name="ngModel" required>
+                    <option value="1">до 50кв</option>
+                    <option value="2">до 70кв</option>
+                    <option value="3">до 90кв</option>
+                    <option value="4">до 120кв</option>
+                    <option value="5">свыше 120кв</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="bathrooms">Количество сан.узлов:</label>
+                <select id="bathrooms" [(ngModel)]="data.bathrooms" name="bathrooms"
+                        #name="ngModel" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="degree">Оцените степень загрязнения:</label>
+                <select id="degree" [(ngModel)]="data.degree" name="degree"
+                        #name="ngModel" required>
+                    <option value="1">пыль</option>
+                    <option value="2">пыль и не большие загрязнения
+                        (жир, налет, шерсть, животных)
+                    </option>
+                    <option value="3">сильно загрязнена (много мусора,
+                        жира, налета, шерсти)
+                    </option>
+                </select>
+            </div>
+
+            <div class="add_services" *ngIf="data.additionalServices == 1">
+                <h3>Доп услуги:</h3>
+                <div class="form-group">
+                    <label for="kitchen">кухня:</label>
+                    <select id="kitchen" [(ngModel)]="data.kitchen" name="kitchen"
+                            #name="ngModel" required>
+                        <option value="1">кух.гарнитур</option>
+                        <option value="2">мойка посуды</option>
+                        <option value="3">духовка</option>
+                        <option value="4">холодильник</option>
+                        <option value="5">микроволновка</option>
+                        <option value="6">чайник</option>
+                        <option value="7">тостер</option>
+                        <option value="8">вытяжка</option>
+                        <option value="9">посудомойка</option>
+                        <option value="10">мультиварка</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="rooms">кухня:</label>
+                    <select id="rooms" [(ngModel)]="data.rooms" name="rooms"
+                            #name="ngModel" required>
+                        <option value="1">шкаф обычный</option>
+                        <option value="2">шкаф зеркальный</option>
+                        <option value="3">гардеробная</option>
+                        <option value="4">люстра</option>
+                        <option value="5">зеркало</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="bathroom">сан.узел:</label>
+                    <select id="bathroom" [(ngModel)]="data.bathroom" name="bathroom"
+                            #name="ngModel" required>
+                        <option value="1">душевая кабина</option>
+                        <option value="2">ванная</option>
+                        <option value="3">раковина</option>
+                        <option value="4">стиральная машинка</option>
+                        <option value="5">лоток питомца</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="ironing">Глажка:</label>
+                    <select id="ironing" [(ngModel)]="data.ironing" name="ironing"
+                            #name="ngModel" required>
+                        <option value="1">комплект постельного</option>
+                        <option value="2">10 единиц одежды</option>
+                        <option value="3">1 карниз штор (тюль+2 ночные)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="walls">Уборка:</label>
+                    <select id="walls" [(ngModel)]="data.walls" name="walls"
+                            #name="ngModel" required>
+                        <option value="1">стены</option>
+                        <option value="2">потолки</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="walls">Окна и балконы:</label>
+                    <select id="windowsBalconis" [(ngModel)]="data.windowsBalconis" name="windowsBalconis"
+                            #name="ngModel" required>
+                        <option value="1">да</option>
+                        <option value="2">нет</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="curtains">Стирка штор (снять, постирать, погладить, повешать):</label>
+                    <select id="curtains" [(ngModel)]="data.curtains" name="curtains"
+                            #name="ngModel" required>
+                        <option value="1">1 карниз</option>
+                        <option value="2">2 карниза</option>
+                        <option value="3">3 карниза</option>
+                        <option value="4">4 карниза</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="others">Другое:</label>
+                    <textarea style="height: 90px;" class="form-control" name="others" id="others" cols="30" rows="90"
+                              [(ngModel)]="data.others"></textarea>
+                </div>
+            </div>
+
+            <div class="window_balconis" *ngIf="data.windowsBalconis == 1">
+                <h3>Если выбрали окна и балконы</h3>
+                <div class="form-group">
+                    <label for="fromTheBelt">Балконы остекление от пояса:</label>
+                    <select id="fromTheBelt" [(ngModel)]="data.fromTheBelt" name="fromTheBelt"
+                            #name="ngModel">
+                        <option value="1">до 3м</option>
+                        <option value="2">до 5м</option>
+                        <option value="3">до 7м</option>
+                        <option value="4">до 10м</option>
+                        <option value="5">до 12м</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="upToCeiling">Балконы остекление от пола до потолка:</label>
+                    <select id="upToCeiling" [(ngModel)]="data.upToCeiling" name="upToCeiling"
+                            #name="ngModel">
+                        <option value="1">до 3м</option>
+                        <option value="2">до 5м</option>
+                        <option value="3">до 7м</option>
+                        <option value="4">до 10м</option>
+                        <option value="5">до 12м</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="windowFromTheBelt">Окна остекление от пояса:</label>
+                    <select id="windowFromTheBelt" [(ngModel)]="data.windowFromTheBelt" name="windowFromTheBelt"
+                            #name="ngModel">
+                        <option value="1">1 створчатое</option>
+                        <option value="2">2-х створчатое</option>
+                        <option value="3">3-х створчатое</option>
+                        <option value="4">4-х створчатое</option>
+                        <option value="5">5-ти створчатое</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="windowUpToCeiling">Окна остекление от пояса:</label>
+                    <select id="windowUpToCeiling" [(ngModel)]="data.windowUpToCeiling" name="windowUpToCeiling"
+                            #name="ngModel">
+                        <option value="1">1 створчатое</option>
+                        <option value="2">2-х створчатое</option>
+                        <option value="3">3-х створчатое</option>
+                        <option value="4">4-х створчатое</option>
+                        <option value="5">5-ти створчатое</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="balconiBlock">Балконный блок (выход на балкон):</label>
+                    <select id="balconiBlock" [(ngModel)]="data.balconiBlock" name="balconiBlock"
+                            #name="ngModel">
+                        <option value="1">от пояса</option>
+                        <option value="2">в пол</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="jalousie">Жалюзи:</label>
+                    <select id="jalousie" [(ngModel)]="data.jalousie" name="jalousie"
+                            #name="ngModel">
+                        <option value="1">до 3-х шт</option>
+                        <option value="2">до 5-ти шт</option>
+                        <option value="3">до 7-ми шт</option>
+                        <option value="4">до 10-ти шт</option>
+                        <option value="5">свыше 10-ти шт</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="cleaningToBalconi">Уборка на балконе (полы и пыль с поверхностей):</label>
+                    <select id="cleaningToBalconi" [(ngModel)]="data.cleaningToBalconi" name="cleaningToBalconi"
+                            #name="ngModel">
+                        <option value="1">до 5кв</option>
+                        <option value="2">до 10кв</option>
+                        <option value="3">до 15кв</option>
+                        <option value="4">до 20кв</option>
+                        <option value="5">свыше 20кв</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="WellsBalconi">Потолки и стены на былконе:</label>
+                    <select id="WellsBalconi" [(ngModel)]="data.WellsBalconi" name="WellsBalconi"
+                            #name="ngModel">
+                        <option value="1">до 5кв</option>
+                        <option value="2">до 10кв</option>
+                        <option value="3">до 15кв</option>
+                        <option value="4">до 20кв</option>
+                        <option value="5">свыше 20кв</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="othersBalcony">Другое:</label>
+                    <textarea style="height: 90px;" class="form-control" name="othersBalcony" id="othersBalcony"
+                              cols="30" rows="90"
+                              [(ngModel)]="data.othersBalcony"></textarea>
+                </div>
+
+            </div>
+
+            <div class="all_end">
+
+                <div class="form-group">
+                    <label for="take">Что принести?</label>
+                    <label><input type="checkbox" name="take" value="1" [(ngModel)]="data.take1">пылесос</label>
+                    <label><input type="checkbox" name="take" value="2" [(ngModel)]="data.take2">стремянка</label>
+                    <label><input type="checkbox" name="take" value="3" [(ngModel)]="data.take3">другое</label>
+                </div>
+
+                <div class="form-group">
+                    <label for="getSetKey">Нужен ли забор доставка ключей?</label>
+                    <select id="getSetKey" [(ngModel)]="data.getSetKey" name="getSetKey"
+                            #name="ngModel" required>
+                        <option value="1">Да</option>
+                        <option value="2">Нет</option>
+                    </select>
+                </div>
+
+                <div class="form-group" *ngIf="data.getSetKey == 1">
+                    <label for="key_yes_from">Адрес забора ключей</label>
+                    <label>
+                        <input type="text" name="key_yes_from" [(ngModel)]="data.key_yes_from" #key_yes_from="ngModel"
+                               required>
+                    </label>
+                </div>
+                <div class="form-group" *ngIf="data.getSetKey == 1">
+                    <label for="key_yes_to">Адрес достваки ключей</label>
+                    <label>
+                        <input type="text" name="key_yes_to" [(ngModel)]="data.key_yes_to" #key_yes_to="ngModel"
+                               required>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="comments">Коментарий к заказу (то что мы у вас не уточнили):</label>
+                    <div style="height: auto;">
+                        <label>
+                            <textarea rows="3" cols="90" type="text" name="comments" [(ngModel)]="data.comments"
+                                      #comments="ngModel"></textarea>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="start_work">Нужен ли забор доставка ключей?</label>
+                    <select id="start_work" [(ngModel)]="data.start_work" name="start_work"
+                            #name="ngModel" required>
+                        <option value="1">как можно быстрее, сегодня или завтра</option>
+                        <option value="2">в течении нескольких дней</option>
+                        <option value="2">выберу день в календаре</option>
+                        <option value="2">договорюсь со специалистом позже</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="mony">Оцените диапазон ожидаемой стоимости (можно пропустить):</label>
+                    <div style="height: auto;" class="form-control">
+                        <label>от</label>
+                        <label>
+                            <input style="width: 265px;" type="number" name="mony_from" [(ngModel)]="data.mony_from"
+                                   #mony_from="ngModel">
+                        </label>
+                        <label>од</label>
+                        <label>
+                            <input style="width: 265px;" type="number" name="mony_to" [(ngModel)]="data.mony_to"
+                                   #mony_to="ngModel">
+                        </label>
+                    </div>
+                </div>
+
+                <div style="text-align: center;" class="form-group">
+                    <div style="height: auto;" class="form-control">
+                        <label>район или город облсти</label>
+                        <label>
+                            <input style="width: 265px;" type="text" name="where_city" [(ngModel)]="data.where_city"
+                                   #where_city="ngModel" required="">
+                        </label>
+                        <label>адрес: ул., дом., корпус., квартира</label>
+                        <label>
+                            <input style="width: 265px;" type="text" name="where_address"
+                                   [(ngModel)]="data.where_address" #where_address="ngModel" required="">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="end">Заказ готов к публикации:</label>
+                    <div style="height: auto;" class="form-control">
+                        <label for="phone">номер телефона</label>
+                        <input style="width: 265px;" type="text" name="phone" [(ngModel)]="data.phone" #phone="ngModel"
+                               required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div style="height: auto;" class="form-control">
+                        <label for="username">Имя и отчество</label>
+                        <input style="width: 265px;" type="text" name="username" [(ngModel)]="data.username"
+                               #username="ngModel" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div style="height: auto;" class="form-control">
+                        <label for="email">эл.почта (по желанию)</label>
+                        <input style="width: 265px;" type="email" name="email" [(ngModel)]="data.email"
+                               #email="ngModel">
+                    </div>
+                </div>
+
+            </div>
+
+            <button type="submit" [disabled]="RepairForm.form.invalid" class="main_button">Далее</button>
+
+        </div>
+
+    </form>
+
+</div>

@@ -6,7 +6,7 @@
       font: {
         size: 24px;
         weight: bold;
-        family: 'Open Sans', sans-serif;
+        family: 'Museo Sans', sans-serif;
       }
       color: #0099D7;
     }
@@ -28,7 +28,7 @@
           font: {
             size: 18px;
             weight: 400;
-            family: 'Open Sans', sans-serif;
+            family: 'Museo Sans', sans-serif;
           }
           color: #555555;
         }
@@ -42,6 +42,19 @@
           height: 8px;
           width: 5px;
         }
+      }
+      &:first-child {
+        padding-bottom: 60px;
+               a {
+         p {
+          font: {
+            size: 24px;
+            weight: bold;
+            family: 'Museo Sans', sans-serif;
+          }
+          color: #0099D7;
+         }
+       }
       }
     }
   }

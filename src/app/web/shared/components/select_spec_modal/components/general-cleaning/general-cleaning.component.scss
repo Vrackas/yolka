@@ -1,0 +1,223 @@
+.modal-header {
+    max-width: 360px;
+    border: none;
+    .close {
+      font-size: 40px;
+      line-height: 20px;
+    }
+    button {
+      border: none;
+      background: transparent;
+      padding: 0;
+      font-size: 23px;
+      line-height: 20px;
+      color: #cccccc;
+      opacity: .7;
+      &:focus {
+        outline: none;
+      }
+    }
+    button:hover {
+      opacity: 1;
+    }
+    .custom_tabs {
+      position: absolute;
+      left: calc(50% - 45px);
+      ul {
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        li {
+          user-select: none;
+          position: relative;
+          display: block;
+          font: {
+            size: 10px;
+            family: 'Roboto', sans-serif;
+            weight: 300;
+          }
+          color: #0099D7;
+          border: {
+            radius: 10px;
+            color: #0099D7;
+            width: 1px;
+            style: solid;
+          }
+          height: 15px;
+          text-align: center;
+          line-height: 15px;
+          width: 15px;
+          margin: 0 15px;
+          &:after {
+            left: 14px;
+            position: absolute;
+            content: "";
+            height: 1px;
+            background-color: #0099D7;
+            width: 30px;
+            top: calc(50% - 1px);
+          }
+          &:before {
+            left: -30px;
+            position: absolute;
+            content: "";
+            height: 1px;
+            background-color: #0099D7;
+            width: 30px;
+            top: calc(50% - 1px);
+          }
+        }
+        .active {
+          background: #0099D7;
+          color: #fff;
+        }
+      }
+    }
+  }
+  
+  .modal-body {
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding-bottom: 20px;
+    h4 {
+      margin: 0;
+      margin-top: -25px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    input, select {
+      margin: 5px;
+      border-radius: 7px;
+      border: 1px solid #0099D7;
+      padding: 5px 10px;
+      &:focus {
+        outline: none;
+      }
+      &:invalid {
+        border: 1px solid red;
+      }
+    }
+  
+    .input_container {
+      position: relative;
+      cursor: pointer;
+      margin: 0 15px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+  
+    /* Hide the browser's default checkbox */
+    .input_container input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+  
+    /* Create a custom checkbox */
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-left: -20px;
+      margin-top: 2px;
+      height: 15px;
+      width: 15px;
+      border: {
+        style: solid;
+        width: 1px;
+        color: #0099D7;
+        radius: 10px;
+      }
+      background-color: #eee;
+    }
+  
+    /* On mouse-over, add a grey background color */
+    .input_container:hover input ~ .checkmark {
+      background-color: #ccc;
+    }
+  
+    /* When the checkbox is checked, add a blue background */
+    .input_container input:checked ~ .checkmark {
+      //background-color: #2196F3;
+    }
+  
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+  
+    /* Show the checkmark when checked */
+    .input_container input:checked ~ .checkmark:after {
+      display: block;
+    }
+  
+    /* Style the checkmark/indicator */
+    .input_container .checkmark:after {
+      left: 3px;
+      top: 3px;
+      width: 7px;
+      height: 7px;
+      background: #0099D7;
+      border: {
+        style: solid;
+        color: #0099D7;
+        width: 3px;
+        radius: 4px;
+      }
+    }
+  
+  
+    button {
+      width: 125px;
+      margin: 10px;
+      font-size: 15px;
+    }
+    a {
+      text-decoration: underline;
+    }
+    button,
+    a {
+      cursor: pointer;
+    }
+    .block_info {
+      height: 300px;
+      overflow: auto;
+      text-align: initial;
+      .sub_info {
+        h2 {
+          font: {
+            size: 18px;
+            weight: bold;
+            family: 'Open Sans', sans-serif;
+          }
+        }
+        h3 {
+          font: {
+            size: 16px;
+            weight: 500;
+            family: 'Open Sans', sans-serif;
+          }
+        }
+        ul {
+          li {
+            h2 {
+              font: {
+                size: 14px;
+                weight: 400;
+                family: 'Open Sans', sans-serif;
+              }
+            }
+          }
+        }
+      }
+    }
+  }

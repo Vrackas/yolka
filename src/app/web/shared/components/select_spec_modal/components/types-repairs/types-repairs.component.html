@@ -8,15 +8,37 @@
     <form (ngSubmit)="next()" #RepairForm="ngForm">
         <div class="form-group">
             <!-- <label for="name">Имя</label> -->
-            <select (change)="select($event.target.value)" id="name" [(ngModel)]="data.repair" name="name"
-                    #name="ngModel" required>
+            <select (change)="select($event.target.value)" id="name" [(ngModel)]="data.repair" name="name" #name="ngModel" required>
                 <option *ngFor="let repair of repairs" value="{{repair.id}}">{{repair.name}}</option>
             </select>
             <div [hidden]="name.valid || name.pristine" class="valid_form_error">
                 Выберите тип уборки
             </div>
         </div>
-        <div class="block_info" *ngIf="data.count !== 0">
+        <div class="form-group" style="text-align: left; width: 265px; margin: 0 auto;">
+            <!-- <label for="name">Имя</label> -->
+            <label class="input_container">
+                <input type="radio" name="home" value="Квартира" [(ngModel)]="data.home" #home="ngModel" required>Квартира
+                <span class="checkmark"></span>
+            </label>
+            <label class="input_container">
+                <input type="radio" name="home" value="Коттедж" [(ngModel)]="data.home" #home="ngModel">Коттедж
+                <span class="checkmark"></span>
+            </label>
+            <label class="input_container" *ngIf="data.repair == 100">
+                <input type="radio" name="home" value="Генеральная только сан/узла" [(ngModel)]="data.home" #home="ngModel">Генеральная только сан/узла
+                <span class="checkmark"></span>
+            </label>
+            <label class="input_container" *ngIf="data.repair == 100">
+                <input type="radio" name="home" value="Генеральная только кухни" [(ngModel)]="data.home" #home="ngModel">Генеральная только кухни
+                <span class="checkmark"></span>
+            </label>
+            <div [hidden]="name.valid || name.pristine" class="valid_form_error">
+                Выберите тип уборки
+            </div>
+        </div>
+
+        <div class="block_info" *ngIf="data.repair == 0">
             <div class="sub_info">
                 <h2>Что входит в тариф / время уборки:</h2>
                 <h3>В жилых комнатах / кухнях</h3>
@@ -60,18 +82,8 @@
                 </ul>
             </div>
         </div>
-        <div class="form-group">
-            <!-- <label for="name">Имя</label> -->
-            <label class="input_container"> <input type="radio" name="home" value="Квартира" [(ngModel)]="data.home" #home="ngModel" required>Квартира
-                <span class="checkmark"></span>
-            </label>
-            <label class="input_container"> <input type="radio" name="home" value="Коттедж" [(ngModel)]="data.home" #home="ngModel">Коттедж
-                <span class="checkmark"></span>
-            </label>
-            <div [hidden]="name.valid || name.pristine" class="valid_form_error">
-                Выберите тип уборки
-            </div>
-        </div>
+
+
         <button type="submit" [disabled]="RepairForm.form.invalid" class="main_button">Далее</button>
     </form>
 

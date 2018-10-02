@@ -1,0 +1,22 @@
+<div class="modal-body">
+    <div class="first row">
+        <form class="col" #RepairForm="ngForm">
+            <div class="form-group">
+                <label for="name">Тип уборки</label>
+                <select id="name" (change)="select()" [(ngModel)]="data.repair" name="name"
+                        #name="ngModel" required>
+                    <option *ngFor="let repair of repairs" value="{{repair.id}}">{{repair.name}}</option>
+                </select>
+            </div>
+
+            <div [ngSwitch]="data.repair">
+                <app-supporting *ngSwitchCase="0"></app-supporting>
+                <app-general *ngSwitchCase="1"></app-general>
+                <app-after-repair *ngSwitchCase="2"></app-after-repair>
+                <app-window-balconies *ngSwitchCase="3"></app-window-balconies>
+                <app-dry-cleaning *ngSwitchCase="4"></app-dry-cleaning>
+            </div>
+
+        </form>
+    </div>
+</div>

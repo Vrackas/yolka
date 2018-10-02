@@ -1,0 +1,23 @@
+<div class="col-12">
+    <div class="col">
+        <div class="row cleaning">
+            <div class="col col-md-3 profile_info" *ngFor="let user of list">
+                <div class="avatar">
+                    <img [src]="user.avatar" alt="">
+                </div>
+                <div class="body_info">
+                    <h2>{{user.name}}</h2>
+                    <p>{{user.positions}}</p>
+                    <div>
+                        <span>
+                            <div class="icon"></div>
+                            <p>{{user.like}}</p>
+                        </span>
+                        <p>Отзывов: {{user.feadback}}</p>
+                    </div>
+                    <a>Подробнее</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

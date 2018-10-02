@@ -5,7 +5,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { ModalModule, PaginationModule } from "ngx-bootstrap";
-import { CleaningInfoComponent } from "./cleaning-info.component";
+import { PersonalRoomClientComponent } from "./personal-room-client.component";
 
 @NgModule({
     imports: [
@@ -16,13 +16,13 @@ import { CleaningInfoComponent } from "./cleaning-info.component";
         FormsModule,
     ],
     declarations: [
-        CleaningInfoComponent
+        PersonalRoomClientComponent
     ],
     providers: [
 
     ],
     bootstrap: []
 })
-export class CleaningInfoModule {
+export class PerosnalRoomClientModule {
 
 }

@@ -1,0 +1,44 @@
+.main-content {
+  .container-fluid {
+    .row {
+      .col-md-12 {
+        .content {
+          table {
+            thead {
+              tr {
+                th {
+                  font: {
+                    size: 14px;
+                    family: 'Museo Sans', sans-serif;
+                    weight: 300;
+                  }
+                  color: #999;
+                  text-transform: none;
+                  border-bottom:none;
+                }
+              }
+            }
+            tbody {
+              tr {
+                td {
+                  padding: 8px 8px;
+                  font: {
+                    size: 14px;
+                    family: 'Museo Sans', sans-serif;
+                    weight: 300;
+                  }
+                  color: #555;
+                  text-transform: none;
+                  border-top: none;
+                }
+                &:nth-of-type(odd) {
+                  background: #fff;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -2,13 +2,12 @@
     <span aria-hidden="true">&times;</span>
 </button>
 
-
-
 <div class="select_spec_modal" [ngSwitch]="count">
 
     <app-types-repairs *ngSwitchCase="0"></app-types-repairs>
     <app-choice-strategy *ngSwitchCase="1"></app-choice-strategy>
     <app-windows *ngSwitchCase="2"></app-windows>
+    <app-general-cleaning *ngSwitchCase="101"></app-general-cleaning>
     <app-all-end *ngSwitchCase="500"></app-all-end>
 
 </div>

@@ -1,10 +1,16 @@
-import {Component, ElementRef, TemplateRef} from '@angular/core';
-import {BsModalService} from 'ngx-bootstrap/modal';
-import {BsModalRef} from 'ngx-bootstrap/modal/bs-modal-ref.service';
+import { Component, ElementRef, TemplateRef } from '@angular/core';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 
-import {SelectSpecModalComponent} from "../shared/components/select_spec_modal/select_spec_modal.component";
-import {element} from "protractor";
+import { SelectSpecModalComponent } from "../shared/components/select_spec_modal/select_spec_modal.component";
+import { element } from "protractor";
+import { AuthService } from '../../auth/shared/services/auth.service';
 
+
+declare interface SignInData {
+    email: string;
+    password: string;
+}
 
 @Component({
     selector: 'app-home',
@@ -13,6 +19,7 @@ import {element} from "protractor";
 })
 export class HomeComponent {
     modalRef: BsModalRef;
+    userData: SignInData;
 
     advantage_choose_list = [
         {
@@ -105,7 +112,11 @@ export class HomeComponent {
         }
     ];
 
-    constructor(private modalService: BsModalService, public el: ElementRef) {
+
+    constructor(
+        private modalService: BsModalService,
+        public el: ElementRef,
+        public auth: AuthService) {
     }
 
 
@@ -118,6 +129,7 @@ export class HomeComponent {
 
         });
     }
+
 
     accordionEffect(id: string) {
         let element = document.getElementById(id);
