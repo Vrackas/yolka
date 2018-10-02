@@ -45,11 +45,17 @@ export class EntryModalComponent implements OnInit {
     }
 
     login() {
-        this.auth.signIn(this.userData).subscribe(res => {
-            this.localStorageservice.set('token', res['data']['token']);
-            this.localStorageservice.set('user', res['data']['user']);
-            this.router.navigate(['web/admin/personal-room']);
+        this.modalRef = this.modalService.show(LoginModalComponent, {
+            initialState: {
+                data: {}
+            }
+
         });
+        // this.auth.signIn(this.userData).subscribe(res => {
+        //     this.localStorageservice.set('token', res['data']['token']);
+        //     this.localStorageservice.set('user', res['data']['user']);
+        //     this.router.navigate(['web/admin/personal-room']);
+        // });
     }
 
     openRegistration(): void {
