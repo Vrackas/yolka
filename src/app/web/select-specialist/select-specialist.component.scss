@@ -7,7 +7,7 @@
     image: url("assets/img/web/specialists/top_bg.png");
     size: cover;
     repeat: no-repeat;
-    position: 0 -89px;
+    //position: 0 -89px;
   }
   position: relative;
   box-shadow: 0px 0px 9px 10px rgba(0, 0, 0, 0.25);
@@ -133,7 +133,11 @@
       border: 1px solid red;
     }
   }
-
+@media (max-width:540px) {
+  input, select, textarea {
+    max-width: 210px;
+  }
+}
 label{
   font-size: 20px;
   margin-right: 30px;
