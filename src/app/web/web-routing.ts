@@ -43,9 +43,9 @@ const WEB_ROUTING: Routes = [
             {
                 path: 'select-specialist-second',
                 component: SelectSpecialistSecondComponent,
-                resolve: {
-                    data: GetAllCleaningResolve
-                }
+                // resolve: {
+                //     data: GetAllCleaningResolve
+                // }
             },
             {
                 path: 'admin',
