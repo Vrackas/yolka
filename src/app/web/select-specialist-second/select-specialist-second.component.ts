@@ -14,21 +14,21 @@ export class SelectSpecialistSecondComponent implements OnInit {
         {
             avatar: 'assets/img/admin/camp.png',
             name: 'Елена Горюнова',
-            positions: 'уборщица',
+            positions: 'специалист по уборке',
             like: '4.9',
             feadback: '12',
         },
         {
             avatar: 'assets/img/admin/camp.png',
             name: 'Елена Горюнова',
-            positions: 'уборщица',
+            positions: 'специалист по уборке',
             like: '4.9',
             feadback: '12',
         },
         {
             avatar: 'assets/img/admin/camp.png',
             name: 'Елена Горюнова',
-            positions: 'уборщица',
+            positions: 'специалист по уборке',
             like: '4.9',
             feadback: '12',
         }

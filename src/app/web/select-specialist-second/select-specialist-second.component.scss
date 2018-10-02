@@ -1,4 +1,116 @@
+
+.top_section{
+  margin-top: -70px;
+  height: 500px;
+  background: {
+    image: url("assets/img/web/specialists/top_bg.png");
+    size: cover;
+    repeat: no-repeat;
+    //position: 0 -89px;
+  }
+  position: relative;
+  box-shadow: 0px 0px 9px 10px rgba(0, 0, 0, 0.25);
+
+}
+
+
+.modal-header {
+  max-width: 360px;
+  border: none;
+
+  .close {
+    font-size: 40px;
+    line-height: 20px;
+  }
+  button {
+    border: none;
+    background: transparent;
+    padding: 0;
+    font-size: 23px;
+    line-height: 20px;
+    color: #cccccc;
+    opacity: .7;
+    &:focus {
+      outline: none;
+    }
+  }
+  button:hover {
+    opacity: 1;
+  }
+  .custom_tabs {
+    position: absolute;
+    left: calc(50% - 67px);
+    ul {
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      li {
+        user-select: none;
+        position: relative;
+        display: block;
+        font: {
+          size: 10px;
+          family: 'Roboto', sans-serif;
+          weight: 300;
+        }
+        color: #0099D7;
+        border: {
+          radius: 10px;
+          color: #0099D7;
+          width: 1px;
+          style: solid;
+        }
+        height: 15px;
+        text-align: center;
+        line-height: 15px;
+        width: 15px;
+        margin: 0 15px;
+        &:after {
+          left: 14px;
+          position: absolute;
+          content: "";
+          height: 1px;
+          background-color: #0099D7;
+          width: 30px;
+          top: calc(50% - 1px);
+        }
+        &:before {
+          left: -30px;
+          position: absolute;
+          content: "";
+          height: 1px;
+          background-color: #0099D7;
+          width: 30px;
+          top: calc(50% - 1px);
+        }
+      }
+      .active {
+        background: #0099D7;
+        color: #fff;
+      }
+    }
+  }
+
+}
+
+.container{
+  margin-top: -200px;
+  margin-bottom: 40px;
+  background: white;
+  border-radius: 75px;
+  box-shadow: 0px 0px 34px 0px rgba(0, 0, 0, 0.25);
+  padding: 30px;
+  position: relative;
+}
+
+
 .cleaning {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
     .profile_info {
       height: 325px;
       margin: 20px;
