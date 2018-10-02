@@ -5,6 +5,6 @@
 
 export const environment = {
     production: false,
-    apiHost: 'http://yolka.smartcapper.online/server/public/api/'
+    apiHost: 'https://yolka-home.com/server/public/api/'
     // apiHost: 'http://localhost:8888/admin-panel-backend/public/api/'
 };
