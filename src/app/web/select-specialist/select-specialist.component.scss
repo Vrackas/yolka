@@ -1,6 +1,24 @@
+
+
+.top_section{
+  margin-top: -70px;
+  height: 500px;
+  background: {
+    image: url("assets/img/web/specialists/top_bg.png");
+    size: cover;
+    repeat: no-repeat;
+    position: 0 -89px;
+  }
+  position: relative;
+  box-shadow: 0px 0px 9px 10px rgba(0, 0, 0, 0.25);
+
+}
+
+
 .modal-header {
   max-width: 360px;
   border: none;
+
   .close {
     font-size: 40px;
     line-height: 20px;
@@ -78,12 +96,23 @@
 
 }
 
+.container{
+  margin-top: -200px;
+  margin-bottom: 40px;
+  background: white;
+  border-radius: 75px;
+  box-shadow: 0px 0px 34px 0px rgba(0, 0, 0, 0.25);
+  padding: 30px;
+  position: relative;
+}
 .modal-body {
   display: flex;
   flex-direction: column;
-  text-align: center;
-  align-items: center;
+  //text-align: center;
+  //align-items: center;
   padding-bottom: 20px;
+
+  min-height: calc(100vh - 423px);
   h4 {
     margin: 0;
     // margin-top: -25px;
@@ -103,6 +132,15 @@
     &:invalid {
       border: 1px solid red;
     }
+  }
+
+label{
+  font-size: 20px;
+  margin-right: 30px;
+}
+  option{
+    border-radius: 5px;
+    border: 1px solid #FFFFFF;
   }
 
   .input_container {
