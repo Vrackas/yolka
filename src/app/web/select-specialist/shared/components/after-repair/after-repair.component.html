@@ -1,0 +1,342 @@
+<div class="modal-body">
+
+    <div class="form-group">
+        <label for="name">Выбор помещения</label>
+        <select id="name" [(ngModel)]="data.home" name="name"
+                #name="ngModel" required>
+            <option value="1">Квартира</option>
+            <option value="2">Коттедж</option>
+        </select>
+    </div>
+    <div *ngIf="data.home == 1 || data.home == 2">
+
+
+        <div class="block_info">
+            <div class="sub_info">
+                <h2>Что входит в тариф / время уборки:</h2>
+                <h3>В жилых комнатах / кухнях</h3>
+                <ul>
+                    <li>обеспыливание всех поверхностей,
+                    </li>
+                    <li>обеспыливание стен и потолков (включая осветительные приборы),
+                    </li>
+                    <li>чистка фурнитуры, двери и дверные короба,
+                    </li>
+                    <li>мойка полов и плинтусов,
+                    </li>
+                    <li>мойка подоконников и радиаторов,
+                    </li>
+                    <li>удаление мелкого строительного мусора (вывоз мусора не входит в стоимость работ),
+                    </li>
+                    <li>влажная уборка всех наружных и внутренних поверхностей корпусной мебели (пустых),
+                    </li>
+                    <li>чиста текстильной обивки мебели с использованием пылесоса
+                    </li>
+                </ul>
+                <h3>В сан / узле:</h3>
+                <ul>
+                    <li>очистка радиаторов отопления и труб,
+                    </li>
+                    <li>чистка и дезинсекция сан.техники,
+                    </li>
+                    <li>мойка полов и плинтусов,
+                    </li>
+                    <li>стены и потолки
+                    </li>
+                </ul>
+                <h2>Что не входит в тарифи:</h2>
+                <ul>
+                    <li>химичиская чистка ковров и мягкой мебели,
+                    </li>
+                    <li>мойка осветительных приборов на высоте более 4-ч метров от уровня пола,
+                    </li>
+                    <li>мойка окон, ветражей, балконов
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="livingRoom">Сколько жилых комнат</label>
+            <select id="livingRoom" [(ngModel)]="data.livingRoom" name="livingRoom"
+                    #name="ngModel" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="area">Общая площадь убираемого помещения:</label>
+            <select id="area" [(ngModel)]="data.area" name="area"
+                    #name="ngModel" required>
+                <option *ngIf="data.home == 1" value="1">до 50кв</option>
+                <option value="2">до 70кв</option>
+                <option *ngIf="data.home == 1" value="2">до 90кв</option>
+                <option *ngIf="data.home == 2" value="3">до 100кв</option>
+                <option *ngIf="data.home == 2" value="4">до 130кв</option>
+                <option *ngIf="data.home == 2" value="5">до 170кв</option>
+                <option *ngIf="data.home == 1" value="6">до 120кв</option>
+                <option *ngIf="data.home == 1" value="7">свыше 120кв</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="bathrooms">Количество сан.узлов:</label>
+            <select id="bathrooms" [(ngModel)]="data.bathrooms" name="bathrooms"
+                    #name="ngModel" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="degree">Оцените степень загрязнения:</label>
+            <select id="degree" [(ngModel)]="data.degree" name="degree"
+                    #name="ngModel" required>
+                <option value="1">Только строительная пыль</option>
+                <option value="2">Строительная пыль и не большие следы затирки
+                </option>
+                <option value="3">Строительная пыль и сильные загрязнения такие как : краска, затирка, клей, скотч,
+                    бетон
+                </option>
+            </select>
+        </div>
+
+        <div class="form-group" *ngIf="data.home == 2">
+            <label for="steps">Количество лесниц</label>
+            <select id="steps" [(ngModel)]="data.steps" name="steps"
+                    #name="ngModel" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="walls">Окна и балконы:</label>
+            <select id="windowsBalconis" [(ngModel)]="data.windowsBalconis" name="windowsBalconis"
+                    #name="ngModel" required>
+                <option value="1">да</option>
+                <option value="2">нет</option>
+            </select>
+        </div>
+
+        <div class="window_balconis" *ngIf="data.windowsBalconis == 1">
+            <h3>Если выбрали окна и балконы</h3>
+            <div class="form-group">
+                <label for="fromTheBelt">Балконы остекление от пояса:</label>
+                <select id="fromTheBelt" [(ngModel)]="data.fromTheBelt" name="fromTheBelt"
+                        #name="ngModel">
+                    <option value="1">до 3м</option>
+                    <option value="2">до 5м</option>
+                    <option value="3">до 7м</option>
+                    <option value="4">до 10м</option>
+                    <option value="5">до 12м</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="upToCeiling">Балконы остекление от пола до потолка:</label>
+                <select id="upToCeiling" [(ngModel)]="data.upToCeiling" name="upToCeiling"
+                        #name="ngModel">
+                    <option value="1">до 3м</option>
+                    <option value="2">до 5м</option>
+                    <option value="3">до 7м</option>
+                    <option value="4">до 10м</option>
+                    <option value="5">до 12м</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="windowFromTheBelt">Окна остекление от пояса:</label>
+                <select id="windowFromTheBelt" [(ngModel)]="data.windowFromTheBelt" name="windowFromTheBelt"
+                        #name="ngModel">
+                    <option value="1">1 створчатое</option>
+                    <option value="2">2-х створчатое</option>
+                    <option value="3">3-х створчатое</option>
+                    <option value="4">4-х створчатое</option>
+                    <option value="5">5-ти створчатое</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="windowUpToCeiling">Окна остекление от пояса:</label>
+                <select id="windowUpToCeiling" [(ngModel)]="data.windowUpToCeiling" name="windowUpToCeiling"
+                        #name="ngModel">
+                    <option value="1">1 створчатое</option>
+                    <option value="2">2-х створчатое</option>
+                    <option value="3">3-х створчатое</option>
+                    <option value="4">4-х створчатое</option>
+                    <option value="5">5-ти створчатое</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="balconiBlock">Балконный блок (выход на балкон):</label>
+                <select id="balconiBlock" [(ngModel)]="data.balconiBlock" name="balconiBlock"
+                        #name="ngModel">
+                    <option value="1">от пояса</option>
+                    <option value="2">в пол</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="jalousie">Жалюзи:</label>
+                <select id="jalousie" [(ngModel)]="data.jalousie" name="jalousie"
+                        #name="ngModel">
+                    <option value="1">до 3-х шт</option>
+                    <option value="2">до 5-ти шт</option>
+                    <option value="3">до 7-ми шт</option>
+                    <option value="4">до 10-ти шт</option>
+                    <option value="5">свыше 10-ти шт</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="cleaningToBalconi">Уборка на балконе (полы и пыль с поверхностей):</label>
+                <select id="cleaningToBalconi" [(ngModel)]="data.cleaningToBalconi" name="cleaningToBalconi"
+                        #name="ngModel">
+                    <option value="1">до 5кв</option>
+                    <option value="2">до 10кв</option>
+                    <option value="3">до 15кв</option>
+                    <option value="4">до 20кв</option>
+                    <option value="5">свыше 20кв</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="WellsBalconi">Потолки и стены на былконе:</label>
+                <select id="WellsBalconi" [(ngModel)]="data.WellsBalconi" name="WellsBalconi"
+                        #name="ngModel">
+                    <option value="1">до 5кв</option>
+                    <option value="2">до 10кв</option>
+                    <option value="3">до 15кв</option>
+                    <option value="4">до 20кв</option>
+                    <option value="5">свыше 20кв</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="othersBalcony">Другое:</label>
+                <textarea style="height: 90px;" class="form-control" name="othersBalcony" id="othersBalcony" cols="30"
+                          rows="90"
+                          [(ngModel)]="data.othersBalcony"></textarea>
+            </div>
+
+        </div>
+
+        <div class="all_end">
+
+            <div class="form-group">
+                <label for="take">Что принести?</label>
+                <label><input type="checkbox" name="take" value="1" [(ngModel)]="data.take1">пылесос</label>
+                <label><input type="checkbox" name="take" value="2" [(ngModel)]="data.take2">стремянка</label>
+                <label><input type="checkbox" name="take" value="3" [(ngModel)]="data.take3">другое</label>
+            </div>
+
+            <div class="form-group">
+                <label for="getSetKey">Нужен ли забор доставка ключей?</label>
+                <select id="getSetKey" [(ngModel)]="data.getSetKey" name="getSetKey"
+                        #name="ngModel" required>
+                    <option value="1">Да</option>
+                    <option value="2">Нет</option>
+                </select>
+            </div>
+
+            <div class="form-group" *ngIf="data.getSetKey == 1">
+                <label for="key_yes_from">Адрес забора ключей</label>
+                <label>
+                    <input type="text" name="key_yes_from" [(ngModel)]="data.key_yes_from" #key_yes_from="ngModel"
+                           required>
+                </label>
+            </div>
+            <div class="form-group" *ngIf="data.getSetKey == 1">
+                <label for="key_yes_to">Адрес достваки ключей</label>
+                <label>
+                    <input type="text" name="key_yes_to" [(ngModel)]="data.key_yes_to" #key_yes_to="ngModel" required>
+                </label>
+            </div>
+            <div class="form-group">
+                <label for="comments">Коментарий к заказу (то что мы у вас не уточнили):</label>
+                <div style="height: auto;">
+                    <label>
+                        <textarea rows="3" cols="90" type="text" name="comments" [(ngModel)]="data.comments"
+                                  #comments="ngModel"></textarea>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="start_work">Нужен ли забор доставка ключей?</label>
+                <select id="start_work" [(ngModel)]="data.start_work" name="start_work"
+                        #name="ngModel" required>
+                    <option value="1">как можно быстрее, сегодня или завтра</option>
+                    <option value="2">в течении нескольких дней</option>
+                    <option value="2">выберу день в календаре</option>
+                    <option value="2">договорюсь со специалистом позже</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="mony">Оцените диапазон ожидаемой стоимости (можно пропустить):</label>
+                <div style="height: auto;" class="form-control">
+                    <label>от</label>
+                    <label>
+                        <input style="width: 265px;" type="number" name="mony_from" [(ngModel)]="data.mony_from"
+                               #mony_from="ngModel">
+                    </label>
+                    <label>од</label>
+                    <label>
+                        <input style="width: 265px;" type="number" name="mony_to" [(ngModel)]="data.mony_to"
+                               #mony_to="ngModel">
+                    </label>
+                </div>
+            </div>
+
+            <div style="text-align: center;" class="form-group">
+                <div style="height: auto;" class="form-control">
+                    <label>район или город облсти</label>
+                    <label>
+                        <input style="width: 265px;" type="text" name="where_city" [(ngModel)]="data.where_city"
+                               #where_city="ngModel" required="">
+                    </label>
+                    <label>адрес: ул., дом., корпус., квартира</label>
+                    <label>
+                        <input style="width: 265px;" type="text" name="where_address" [(ngModel)]="data.where_address"
+                               #where_address="ngModel" required="">
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="end">Заказ готов к публикации:</label>
+                <div style="height: auto;" class="form-control">
+                    <label for="phone">номер телефона</label>
+                    <input style="width: 265px;" type="text" name="phone" [(ngModel)]="data.phone" #phone="ngModel"
+                           required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div style="height: auto;" class="form-control">
+                    <label for="username">Имя и отчество</label>
+                    <input style="width: 265px;" type="text" name="username" [(ngModel)]="data.username"
+                           #username="ngModel" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div style="height: auto;" class="form-control">
+                    <label for="email">эл.почта (по желанию)</label>
+                    <input style="width: 265px;" type="email" name="email" [(ngModel)]="data.email" #email="ngModel">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

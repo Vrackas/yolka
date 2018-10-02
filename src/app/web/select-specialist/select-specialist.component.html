@@ -1,0 +1,820 @@
+<div class="modal-body">
+    <div class="first row">
+        <form class="col" (ngSubmit)="next()" #RepairForm="ngForm">
+            <div class="form-group">
+                <label for="name">Тип уборки</label>
+                <select id="name" [(ngModel)]="data.repair" name="name"
+                        #name="ngModel" required>
+                    <option *ngFor="let repair of repairs" value="{{repair.id}}">{{repair.name}}</option>
+                </select>
+            </div>
+
+            <div [ngSwitch]="data.repair">
+                <app-supporting *ngSwitchCase="0"></app-supporting>
+                <app-general *ngSwitchCase="1"></app-general>
+                <app-after-repair *ngSwitchCase="2"></app-after-repair>
+                <app-window-balconies *ngSwitchCase="3"></app-window-balconies>
+                <app-dry-cleaning *ngSwitchCase="4"></app-dry-cleaning>
+            </div>
+            <!--<div class="form-group">-->
+            <!--&lt;!&ndash; <label for="name">Имя</label> &ndash;&gt;-->
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="home" value="Квартира" [(ngModel)]="data.home" #home="ngModel" required>Квартира-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="home" value="Коттедж" [(ngModel)]="data.home" #home="ngModel">Коттедж-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+            <!--<label class="input_container" *ngIf="data.repair == 100">-->
+            <!--<input type="radio" name="home" value="Генеральная только сан/узла" [(ngModel)]="data.home" #home="ngModel">Генеральная только сан/узла-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+            <!--<label class="input_container" *ngIf="data.repair == 100">-->
+            <!--<input type="radio" name="home" value="Генеральная только кухни" [(ngModel)]="data.home" #home="ngModel">Генеральная только кухни-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+            <!--<div [hidden]="name.valid || name.pristine" class="valid_form_error">-->
+            <!--Выберите тип уборки-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="block_info" *ngIf="data.repair == 200">-->
+            <!--<div class="sub_info">-->
+            <!--<h2>Что входит в тариф / время уборки:</h2>-->
+            <!--<h3>В жилых комнатах / кухнях</h3>-->
+            <!--<ul>-->
+            <!--<li>обеспыливание всех поверхностей,-->
+            <!--</li>-->
+            <!--<li>обеспыливание стен и потолков (включая осветительные приборы),-->
+            <!--</li>-->
+            <!--<li>чистка фурнитуры, двери и дверные короба,-->
+            <!--</li>-->
+            <!--<li>мойка полов и плинтусов,-->
+            <!--</li>-->
+            <!--<li>мойка подоконников и радиаторов,-->
+            <!--</li>-->
+            <!--<li>удаление мелкого строительного мусора (вывоз мусора не входит в стоимость работ),-->
+            <!--</li>-->
+            <!--<li>влажная уборка всех наружных и внутренних поверхностей корпусной мебели (пустых),-->
+            <!--</li>-->
+            <!--<li>чиста текстильной обивки мебели с использованием пылесоса-->
+            <!--</li>-->
+            <!--</ul>-->
+            <!--<h3>В сан / узле:</h3>-->
+            <!--<ul>-->
+            <!--<li>очистка радиаторов отопления и труб,-->
+            <!--</li>-->
+            <!--<li>чистка и дезинсекция сан.техники,-->
+            <!--</li>-->
+            <!--<li>мойка полов и плинтусов,-->
+            <!--</li>-->
+            <!--<li>стены и потолки-->
+            <!--</li>-->
+            <!--</ul>-->
+            <!--<h2>Что не входит в тарифи:</h2>-->
+            <!--<ul>-->
+            <!--<li>химичиская чистка ковров и мягкой мебели,-->
+            <!--</li>-->
+            <!--<li>мойка осветительных приборов на высоте более 4-ч метров от уровня пола,-->
+            <!--</li>-->
+            <!--<li>мойка окон, ветражей, балконов-->
+            <!--</li>-->
+            <!--</ul>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="block_info" *ngIf="data.repair == 100 && (data.home == 'Квартира' || data.home == 'Коттедж')">-->
+            <!--<div class="sub_info">-->
+            <!--<h2>Что входит в тариф:</h2>-->
+            <!--<h3>в жилых комнатах:</h3>-->
+            <!--<h4>Протираем пыль на всех доступных поверхностях</h4>-->
+            <!--<ul>-->
+            <!--<li>пыль со всех потолков и под всеми предметами, после того как протерли - расставляем все по местам</li>-->
+            <!--<li>собираем вещи разбросанные в стопочку и спрашиваем клиента куда их положить</li>-->
+            <!--<li>подоконники и радиаторы</li>-->
+            <!--<li>картины, зеркала, часы, настенные светильники</li>-->
+            <!--<li>шкафы с внешней стороны</li>-->
+            <!--<li>стеклянные поверхности</li>-->
+            <!--<li>телевизор и всю остальную технику</li>-->
+            <!--<li>собираем мусор</li>-->
+            <!--<li>пылесосим пылесосом клиента</li>-->
+            <!--<li>заправляем кровать (меняем постельное) или диван (протираем или пылесосим диван, если нужно)</li>-->
+            <!--<li>выключатели и розетки</li>-->
+            <!--<li>двери и дверные короба, дверные ручки</li>-->
+            <!--<li>меняем постлельное белье (если нужно)</li>-->
+            <!--<li>моем пол и плинтуса, если у вас есть пылесос, пылесосим ковёр (обязательно и под диваном и под кроватью-->
+            <!--и за тумбочкой)</li>-->
+            <!--</ul>-->
+            <!--<h3>Кухня (так же как и в ген кухне):</h3>-->
+            <!--<h4>Протираем все доступные поверхности:</h4>-->
+            <!--<ul>-->
+            <!--<li>кухонный гарнитур снаружи со всех сторон (от жира и загрязнений)</li>-->
+            <!--<li>вся бытовая техника снаружи со всех сторон (холодильник, плита, микроволновка, вытяжка, мультиварка,-->
+            <!--чайник, тостер и прочее)</li>-->
+            <!--<li>кухонный фартук</li>-->
+            <!--<li>раковина и смесители</li>-->
+            <!--<li>посуда в раковине (после обычного ужина)</li>-->
+            <!--<li>мусор с корзины</li>-->
+            <!--<li>стол и стулья (не забываем про ножки стульев)</li>-->
+            <!--<li>подоконник и радитор</li>-->
+            <!--<li>выключатели и розетки</li>-->
+            <!--<li>дверь на кухне или дверная коробка</li>-->
+            <!--<li>дверные ручки</li>-->
+            <!--<li>картины, часы, все что висит на стенах</li>-->
+            <!--<li>полы и плинтуса</li>-->
+            <!--</ul>-->
+            <!--<h3>Сан/узел:</h3>-->
+            <!--<h4>Протираем все доступные поверхности:</h4>-->
+            <!--<ul>-->
+            <!--<li>чистим ванную (под ванной)/душевую</li>-->
+            <!--<li>штанга для шторки</li>-->
+            <!--<li>раковину и смесители</li>-->
+            <!--<li>чистим зеркала и стеклянные поверхности</li>-->
+            <!--<li>протираем шкафы с внешней стороны (мыльницы)</li>-->
+            <!--<li>протираем бутылки и расставляем их по местам</li>-->
+            <!--<li>стиральную машинку с внешней стороны</li>-->
+            <!--<li>корзинку для белья</li>-->
+            <!--<li>моем кафель на стенах (трубы, сушилку)</li>-->
+            <!--<li>моем и дезинфицируем унитаз (подчтавку для ершика)</li>-->
+            <!--<li>мусор и мусорную корзину снаружи</li>-->
+            <!--<li>выключатели и дверные ручки</li>-->
+            <!--<li>двери и дверные короба</li>-->
+            <!--<li>полы и плинтуса, если у клиента есть пылесос, пылесосим коврик</li>-->
+            <!--</ul>-->
+            <!--<h3>В коридоре:</h3>-->
+            <!--<h4>Протираем все доступные поверхности:</h4>-->
+            <!--<ul>-->
+            <!--<li>пыль с картин, с часов</li>-->
+            <!--<li>шкафы снаружи</li>-->
+            <!--<li>вешалка</li>-->
+            <!--<li>розетки и выключатели</li>-->
+            <!--<li>чистим зеркала и стеклянные поверхности</li>-->
+            <!--<li>расставляем обувь (протираем подставку для обуви)</li>-->
+            <!--<li>протираем двери</li>-->
+            <!--<li>моем пол и плинтуса, пылесосим коврики, если у клиента есть пылесос</li>-->
+            <!--</ul>-->
+            <!--<h2>НЕ ВХОДИТ:</h2>-->
+            <!--<ul>-->
+            <!--<li>внутри закрытых шкафов</li>-->
+            <!--<li>внутри электроприборов</li>-->
+            <!--<li>стены (кроме стен в сан узле) и потолки</li>-->
+            <!--<li>окна и балконы</li>-->
+            <!--</ul>-->
+            <!--<h2>Регламент уборки:</h2>-->
+            <!--<p>1к квартира - 2-4 часа</p>-->
+            <!--<p>2к -3-5 часов</p>-->
+            <!--<p>3к - 4-6 часов</p>-->
+            <!--<p>4к - 4-8 часов</p>-->
+            <!--<p>5к - 5-8 часов</p>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="block_info" *ngIf="data.repair == 100 && (data.home == 'Генеральная только сан/узла')">-->
+            <!--<div class="sub_info">-->
+            <!--<h2>Что входит в уборку:</h2>-->
+            <!--<h3>Протираем все доступные поверхности:</h3>-->
+            <!--<ul>-->
+            <!--<li>чистим ванную (под ванной)/душевую</li>-->
+            <!--<li>штанга для шторки</li>-->
+            <!--<li>раковину и смесители</li>-->
+            <!--<li>чистим зеркала и стеклянные поверхности</li>-->
+            <!--<li>протираем шкафы с внешней стороны (мыльницы)</li>-->
+            <!--<li>протираем бутылки и расставляем их по местам</li>-->
+            <!--<li>стиральную машинку с внешней стороны</li>-->
+            <!--<li>корзину для белья</li>-->
+            <!--<li>моем кафель на стенах (трубы, сушилку, вытяжку)</li>-->
+            <!--<li>моем и дезинфицируем унитаз (подставку для ершика)</li>-->
+            <!--<li>мусор выносим и мусорную корзину снаружи моем</li>-->
+            <!--<li>выключатели и дверные ручки</li>-->
+            <!--<li>двери и дверные короба</li>-->
+            <!--<li>полы и плинтуса, если у клиента есть пылесос, пылесосим коврик (либо щеточкой отчищаем)</li>-->
+            <!--</ul>-->
+            <!--<h2>НЕ ВХОДИТ</h2>-->
+            <!--<ul>-->
+            <!--<li>внутри шкафов</li>-->
+            <!--<li>потолок</li>-->
+            <!--<li>внутри быт техники</li>-->
+            <!--</ul>-->
+            <!--<h2>Регламент на уборку:</h2>-->
+            <!--<p>от 1,5 -3 часов</p>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="block_info" *ngIf="data.repair == 100 && (data.home == 'Генеральная только кухни')">-->
+            <!--<div class="sub_info">-->
+            <!--<h2>Что входит в тариф:</h2>-->
+            <!--<h3>Протираем все доступные поверхности:</h3>-->
+            <!--<ul>-->
+            <!--<li>кухонный гарнитур снаружи со всех сторон (от жира и загрязнений)</li>-->
+            <!--<li>вся бытовая техника снаружи со всех сторон (холодильник, плита, микроволновка, вытяжка, мультиварка,-->
+            <!--чайник, тостер и прочее)</li>-->
+            <!--<li>кухонный фартук</li>-->
+            <!--<li>раковина и смесители</li>-->
+            <!--<li>посуда в раковине (после обычного ужина)</li>-->
+            <!--<li>мусор с корзины</li>-->
+            <!--<li>стол и стулья (не забываем про ножки стульев)</li>-->
+            <!--<li>подоконник и радиатор</li>-->
+            <!--<li>выключатели и розекти</li>-->
+            <!--<li>дверь на кухне или дверная коробка</li>-->
+            <!--<li>дверные ручки</li>-->
+            <!--<li>картины, часы, все что висит на стенах</li>-->
+            <!--<li>полы и плинтуса</li>-->
+            <!--</ul>-->
+            <!--<h2>НЕ ВХОДИТ:</h2>-->
+            <!--<ul>-->
+            <!--<li>внутри шкафов</li>-->
+            <!--<li>внутри электроприборов</li>-->
+            <!--<li>стены</li>-->
+            <!--<li>потолки</li>-->
+            <!--<li>окна</li>-->
+            <!--<li>люстры</li>-->
+            <!--</ul>-->
+            <!--<h2>Регламент на уборку:</h2>-->
+            <!--<p>от 2-4 часов</p>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="block_info" *ngIf="data.repair == 1">-->
+            <!--<div class="sub_info">-->
+            <!--<h2>Что вхоит в уборку:</h2>-->
+            <!--<h3>В жилых комнатах:</h3>-->
+            <!--<ul>-->
+            <!--<li>протираем пыль со всех доступных поверхностей (не отчищаем от загрязнений)</li>-->
+            <!--<li>собираем вещи и расставляем их по местам</li>-->
+            <!--<li>картины, зеркала (не большого размера стандартной картины), часы</li>-->
+            <!--<li>подоконники и радиаторы</li>-->
+            <!--<li>заправляем кровать или диван (пылесосим диван, если нужно)</li>-->
+            <!--<li>фурнитура</li>-->
+            <!--<li>двери и дверные короба</li>-->
+            <!--<li>полы и плинтуса</li>-->
+            <!--</ul>-->
+            <!--<h3>На кухне</h3>-->
+            <!--<ul>-->
+            <!--<li>протирается пыль со всех доступных поверхностей</li>-->
+            <!--<li>полы и плинтуса</li>-->
+            <!--<li>подоконники и радиаторы</li>-->
+            <!--</ul>-->
+            <!--<h3>Сан.узел</h3>-->
+            <!--<ul>-->
+            <!--<li>чистится и дезинфицируется унитаз</li>-->
+            <!--<li>протирается раковина</li>-->
+            <!--<li>моются полы и плинтуса</li>-->
+            <!--</ul>-->
+            <!--<h3>не выходит</h3>-->
+            <!--<ul>-->
+            <!--<li>не отчищаем кух. гарнитур и быт. технику от жира и прочих загрязнений</li>-->
+            <!--<li>не моется ванна/душевая/стены в сан.узле</li>-->
+            <!--<li>не чистим смесители, а раковину просто протираем</li>-->
+            <!--<li>не моем посуду</li>-->
+            <!--<li>не моем окна и балконы</li>-->
+            <!--<li>стены и потолки</li>-->
+            <!--<li>внутри шкафов и электроприборов</li>-->
+            <!--</ul>-->
+            <!--<h2>ВНИМАНИЕ:</h2>-->
+            <!--<P>данный тариф является простой влажной уборкой, в котором поверхности не отчищаются от различных загрязнений</P>-->
+            <!--<h2>Регламент по времени:</h2>-->
+            <!--<ul>-->
+            <!--<li>1к - 1час - 2 часа</li>-->
+            <!--<li>2к - 1,5 - 3 часа</li>-->
+            <!--<li>3к - 2- 4 часа</li>-->
+            <!--<li>4к -3 - 4,5 часа</li>-->
+            <!--<li>5к - 3 - 5 часов</li>-->
+            <!--</ul>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div *ngIf="data.repair && data.home">-->
+            <!--<div class="form-group">-->
+            <!--<label for="count_room">Сколько жилых комнат:</label>-->
+            <!--<div class="form-control">-->
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="count_room" value="1" [(ngModel)]="data.room_count" #count_room="ngModel" required>1-->
+            <!--<span class="checkmark"></span>-->
+
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="count_room" value="2" [(ngModel)]="data.room_count" #count_room="ngModel" required>2-->
+            <!--<span class="checkmark"></span>-->
+
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="count_room" value="3" [(ngModel)]="data.room_count" #count_room="ngModel" required>3-->
+            <!--<span class="checkmark"></span>-->
+
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="count_room" value="4" [(ngModel)]="data.room_count" #count_room="ngModel" required>4-->
+            <!--<span class="checkmark"></span>-->
+
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="count_room" value="5" [(ngModel)]="data.room_count" #count_room="ngModel" required>5-->
+            <!--<span class="checkmark"></span>-->
+
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="count_room" value="6" [(ngModel)]="data.room_count" #count_room="ngModel" required>6-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+            <!--<label for="square">Общая площадь убираемого помещения:</label>-->
+            <!--<div style="height: auto" class="form-control">-->
+            <!--<label class="input_container" *ngIf="data.home == 'Квартира'">-->
+            <!--<input type="radio" name="square" value="до 50кв" [(ngModel)]="data.square" #square="ngModel" required>до 50кв-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="square" value="до 70кв" [(ngModel)]="data.square" #square="ngModel" required>до 70кв-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container" *ngIf="data.home == 'Квартира'">-->
+            <!--<input type="radio" name="square" value="до 90кв" [(ngModel)]="data.square" #square="ngModel" required>до 90кв-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container" *ngIf="data.home == 'Коттедж'">-->
+            <!--<input type="radio" name="square" value="до 100кв" [(ngModel)]="data.square" #square="ngModel" required>до 100кв-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container" *ngIf="data.home == 'Квартира'">-->
+            <!--<input type="radio" name="square" value="до 120кв" [(ngModel)]="data.square" #square="ngModel" required>до 120кв-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container" *ngIf="data.home == 'Квартира'">-->
+            <!--<input type="radio" name="square" value="свыше 120кв" [(ngModel)]="data.square" #square="ngModel" required>свыше 120кв-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container" *ngIf="data.home == 'Коттедж'">-->
+            <!--<input type="radio" name="square" value="до 130кв" [(ngModel)]="data.square" #square="ngModel" required>до 130кв-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container" *ngIf="data.home == 'Коттедж'">-->
+            <!--<input type="radio" name="square" value="до 170кв" [(ngModel)]="data.square" #square="ngModel" required>до 170кв-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container" *ngIf="data.home == 'Коттедж'">-->
+            <!--<input type="radio" name="square" value="до 200кв" [(ngModel)]="data.square" #square="ngModel" required>до 200кв-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+            <!--<label for="count_bath">Количество сан.узлов:</label>-->
+            <!--<div class="form-control">-->
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="count_bath" value="1" [(ngModel)]="data.count_bath" #count_bath="ngModel" required>1-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="count_bath" value="2" [(ngModel)]="data.count_bath" #count_bath="ngModel" required>2-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="count_bath" value="3" [(ngModel)]="data.count_bath" #count_bath="ngModel" required>3-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="count_bath" value="4" [(ngModel)]="data.count_bath" #count_bath="ngModel" required>4-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="form-group" *ngIf="data.home == 'Коттедж'">-->
+            <!--<label for="stairs">Количество лесниц:</label>-->
+            <!--<div class="form-control">-->
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="stairs" value="1" [(ngModel)]="data.stairs" #stairs="ngModel" required>1-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="stairs" value="2" [(ngModel)]="data.stairs" #stairs="ngModel" required>2-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="stairs" value="3" [(ngModel)]="data.stairs" #stairs="ngModel" required>3-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+            <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="form-group">-->
+            <!--<label for="pollution">Оцените степень загрязнения:</label>-->
+            <!--<div style="height: auto; text-align: left;" class="form-control">-->
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="pollution" value="только строительная пыль" [(ngModel)]="data.pollution" #pollution="ngModel" required>только строительная пыль-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="pollution" value="строительная пыль и не большие следы затирки" [(ngModel)]="data.pollution" #pollution="ngModel"-->
+            <!--required>строительная пыль и не большие следы затирки-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="pollution" value="строительная пыль и сильные загрязнения, такие как: краска, затирка, клей, скотч, бетон..."-->
+            <!--[(ngModel)]="data.pollution" #pollution="ngModel" required>строительная пыль и сильные загрязнения, такие как: краска, затирка, клей, скотч, бетон...-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+            <!--&lt;!&ndash; <label for="windows">:</label> &ndash;&gt;-->
+            <!--<div style="height: auto" class="form-control">-->
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="windows" value="1" [(ngModel)]="data.windows" #windows="ngModel" required>с окнами и балконом-->
+            <!--<span class="checkmark"></span>-->
+
+            <!--</label>-->
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="windows" value="2" [(ngModel)]="data.windows" #windows="ngModel" required>без окон и балконов-->
+            <!--<span class="checkmark"></span>-->
+
+            <!--</label>-->
+            <!--</div>-->
+            <!--</div>-->
+
+            <!--<div *ngIf="data.windows == 1">-->
+            <!--<div class="form-group">-->
+            <!--<label for="balcony_belt">Балконы остекление от пояса:</label>-->
+            <!--<div style="height: auto;" class="form-control">-->
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="balcony_belt" value="до 3м" [(ngModel)]="data.balcony_belt" #balcony_belt="ngModel">до 3м-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="balcony_belt" value="до 5м" [(ngModel)]="data.balcony_belt" #balcony_belt="ngModel">до 5м-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="balcony_belt" value="до 7м" [(ngModel)]="data.balcony_belt" #balcony_belt="ngModel">до 7м-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="balcony_belt" value="до 10м" [(ngModel)]="data.balcony_belt" #balcony_belt="ngModel">до 10м-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="balcony_belt" value="до 12м" [(ngModel)]="data.balcony_belt" #balcony_belt="ngModel">до 12м-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+            <!--<label for="balcony_ceiling">Балконы остекление от пола до потолка:</label>-->
+            <!--<div style="height: auto;" class="form-control">-->
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="balcony_ceiling" value="до 3м" [(ngModel)]="data.balcony_ceiling" #balcony_ceiling="ngModel">до 3м-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="balcony_ceiling" value="до 5м" [(ngModel)]="data.balcony_ceiling" #balcony_ceiling="ngModel">до 5м-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="balcony_ceiling" value="до 7м" [(ngModel)]="data.balcony_ceiling" #balcony_ceiling="ngModel">до 7м-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="balcony_ceiling" value="до 10м" [(ngModel)]="data.balcony_ceilingt" #balcony_ceilingt="ngModel">до 10м-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="balcony_ceiling" value="до 12м" [(ngModel)]="data.balcony_ceilingt" #balcony_ceilingt="ngModel">до 12м-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+            <!--<label for="windows_ceiling">Окна остекление от пояса:</label>-->
+            <!--<div style="height: auto;" class="form-control">-->
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="windows_ceiling" value="1 створчатое" [(ngModel)]="data.windows_ceiling" #windows_ceiling="ngModel">1 створчатое-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="windows_ceiling" value="2-х створчатое" [(ngModel)]="data.windows_ceiling" #windows_ceiling="ngModel">2-х створчатое-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="windows_ceiling" value="3-х створчатое" [(ngModel)]="data.windows_ceiling" #windows_ceiling="ngModel">3-х створчатое-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="windows_ceiling" value="4-х створчатое" [(ngModel)]="data.windows_ceilingt" #windows_ceiling="ngModel">4-х створчатое-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="windows_ceiling" value="5-ти створчатое" [(ngModel)]="data.windows_ceilingt" #windows_ceiling="ngModel">5-ти створчатое-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+            <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="form-group">-->
+            <!--<label for="windows_belt">Окна остекление от пола до потолка:</label>-->
+            <!--<div style="height: auto;" class="form-control">-->
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="windows_belt" value="1 створчатое" [(ngModel)]="data.windows_belt" #windows_belt="ngModel">1 створчатое-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="windows_belt" value="2-х створчатое" [(ngModel)]="data.windows_belt" #windows_belt="ngModel">2-х створчатое-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="windows_belt" value="3-х створчатое" [(ngModel)]="data.windows_belt" #windows_belt="ngModel">3-х створчатое-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="windows_belt" value="4-х створчатое" [(ngModel)]="data.windows_belt" #windows_belt="ngModel">4-х створчатое-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="windows_belt" value="5-ти створчатое" [(ngModel)]="data.windows_belt" #windows_belt="ngModel">5-ти створчатое-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+            <!--<label for="balcony_block">Балконный блок (выход на балкон):</label>-->
+            <!--<div style="height: auto;" class="form-control">-->
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="balcony_block" value="от пола" [(ngModel)]="data.balcony_block" #balcony_block="ngModel">от пояса-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="balcony_block" value="в пол" [(ngModel)]="data.balcony_block" #balcony_block="ngModel">в пол-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+            <!--<label for="jalousie">Жалюзи:</label>-->
+            <!--<div style="height: auto;" class="form-control">-->
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="jalousie" value="до 3-х шт" [(ngModel)]="data.jalousie" #jalousie="ngModel">до 3-х шт-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="jalousie" value="до 5-ти шт" [(ngModel)]="data.jalousie" #jalousie="ngModel">до 5-ти шт-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="jalousie" value="до 7-ми шт" [(ngModel)]="data.jalousie" #jalousie="ngModel">до 7-ми шт-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="jalousie" value="до 10-ти шт" [(ngModel)]="data.jalousie" #jalousie="ngModel">до 10-ти шт-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="jalousie" value="свыше 10-ти шт" [(ngModel)]="data.jalousie" #jalousie="ngModel">свыше 10-ти шт-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+            <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="form-group">-->
+            <!--<label for="cleaning_balcony">Уборка на балконе (полы и пыль с поверхностей):</label>-->
+            <!--<div style="height: auto;" class="form-control">-->
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="cleaning_balcony" value="до 5кв" [(ngModel)]="data.cleaning_balcony" #cleaning_balcony="ngModel">до 5кв-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="cleaning_balcony" value="до 10кв" [(ngModel)]="data.cleaning_balcony" #cleaning_balcony="ngModel">до 10кв-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="cleaning_balcony" value="до 15кв" [(ngModel)]="data.cleaning_balcony" #cleaning_balcony="ngModel">до 15кв-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="cleaning_balcony" value="до 20кв" [(ngModel)]="data.cleaning_balcony" #cleaning_balcony="ngModel">до 20кв-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="cleaning_balcony" value="свыше 20кв" [(ngModel)]="data.cleaning_balcony" #cleaning_balcony="ngModel">свыше 20кв-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+            <!--<label for="wall_balcony">Потолки и стены на балконе:</label>-->
+            <!--<div style="height: auto;" class="form-control">-->
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="wall_balcony" value="до 5кв" [(ngModel)]="data.wall_balcony" #wall_balcony="ngModel">до 5кв-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="wall_balcony" value="до 10кв" [(ngModel)]="data.wall_balcony" #wall_balcony="ngModel">до 10кв-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="wall_balcony" value="до 15кв" [(ngModel)]="data.wall_balcony" #wall_balcony="ngModel">до 15кв-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="wall_balcony" value="до 20кв" [(ngModel)]="data.wall_balcony" #wall_balcony="ngModel">до 20кв-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="wall_balcony" value="свыше 20кв" [(ngModel)]="data.wall_balcony" #wall_balcony="ngModel">свыше 20кв-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+            <!--<label for="other">Другое:</label>-->
+            <!--<div style="height: auto;">-->
+            <!--<label>-->
+            <!--<textarea rows="3" cols="90" placeholder="Другое" type="text" name="other" [(ngModel)]="data.other" #other="ngModel"></textarea>-->
+            <!--</label>-->
+
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+
+            <!--<div>-->
+            <!--&lt;!&ndash; Its Last Pages &ndash;&gt;-->
+            <!--<div class="form-group">-->
+            <!--<label for="bring">Что принести?:</label>-->
+            <!--<div style="height: auto;" class="form-control">-->
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="bring" value="пылесос" [(ngModel)]="data.bring" #bring="ngModel">пылесос-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="bring" value="стремянка" [(ngModel)]="data.bring" #bring="ngModel">стремянка-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="bring" value="другое" [(ngModel)]="data.bring" #bring="ngModel">другое-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+            <!--<label for="key">Нужен ли забор/доставка ключей?:</label>-->
+            <!--<div style="height: auto;" class="form-control">-->
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="key" value="Да" [(ngModel)]="data.key" #key="ngModel">Да-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="key" value="Нет" [(ngModel)]="data.key" #key="ngModel">Нет-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="form-group" *ngIf="data.key === 'Да'">-->
+            <!--<label for="key_yes_from">Адрес забора ключей</label>-->
+            <!--<label>-->
+            <!--<input type="text" name="key_yes_from" [(ngModel)]="data.key_yes_from" #key_yes_from="ngModel" required>-->
+            <!--</label>-->
+            <!--</div>-->
+
+            <!--<div class="form-group" *ngIf="data.key === 'Да'">-->
+            <!--<label for="key_yes_to">Адрес достваки ключей</label>-->
+            <!--<label>-->
+            <!--<input type="text" name="key_yes_to" [(ngModel)]="data.key_yes_to" #key_yes_to="ngModel" required>-->
+            <!--</label>-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+            <!--<label for="comments">Коментарий к заказу (то что мы у вас не уточнили):</label>-->
+            <!--<div style="height: auto;">-->
+            <!--<label>-->
+            <!--<textarea rows="3" cols="90" type="text" name="comments" [(ngModel)]="data.comments" #comments="ngModel"></textarea>-->
+            <!--</label>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+            <!--<label for="start_work">Когда приступить к работе:</label>-->
+            <!--<div style="height: auto;" class="form-control">-->
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="start_work" value="как можно быстрее, сегодня или завтра" [(ngModel)]="data.start_work" #start_work="ngModel"-->
+            <!--required>как можно быстрее, сегодня или завтра-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="start_work" value="в течении нескольких дней" [(ngModel)]="data.start_work" #start_work="ngModel"-->
+            <!--required>в течении нескольких дней-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="start_work" value="выберу день в календаре" [(ngModel)]="data.start_work" #start_work="ngModel"-->
+            <!--required>выберу день в календаре-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--<label class="input_container">-->
+            <!--<input type="radio" name="start_work" value="договорюсь со специалистом позже" [(ngModel)]="data.start_work" #start_work="ngModel"-->
+            <!--required>договорюсь со специалистом позже-->
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+
+            <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="form-group">-->
+            <!--<label for="mony">Оцените диапазон ожидаемой стоимости (можно пропустить):</label>-->
+            <!--<div style="height: auto;" class="form-control">-->
+            <!--<label>от</label>-->
+            <!--<label>-->
+            <!--<input style="width: 265px;" type="number" name="mony_from" [(ngModel)]="data.mony_from" #mony_from="ngModel">-->
+            <!--</label>-->
+            <!--<label>од</label>-->
+            <!--<label>-->
+            <!--<input style="width: 265px;" type="number" name="mony_to" [(ngModel)]="data.mony_to" #mony_to="ngModel">-->
+            <!--</label>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div style="text-align: center;" class="form-group">-->
+            <!--<div style="height: auto;" class="form-control">-->
+            <!--<label>район или город облсти</label>-->
+            <!--<label>-->
+            <!--<input style="width: 265px;" type="text" name="where_city" [(ngModel)]="data.where_city" #where_city="ngModel" required="">-->
+            <!--</label>-->
+            <!--<label>адрес: ул., дом., корпус., квартира</label>-->
+            <!--<label>-->
+            <!--<input style="width: 265px;" type="text" name="where_address" [(ngModel)]="data.where_address" #where_address="ngModel" required="">-->
+            <!--</label>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+            <!--<label for="end">Заказ готов к публикации:</label>-->
+            <!--<div style="height: auto;" class="form-control">-->
+            <!--<label for="phone">номер телефона</label>-->
+            <!--<input style="width: 265px;" type="text" name="phone" [(ngModel)]="data.phone" #phone="ngModel" required>-->
+            <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="form-group">-->
+            <!--<div style="height: auto;" class="form-control">-->
+            <!--<label for="username">Имя и отчество</label>-->
+            <!--<input style="width: 265px;" type="text" name="username" [(ngModel)]="data.username" #username="ngModel" required>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+            <!--<div style="height: auto;" class="form-control">-->
+            <!--<label for="email">эл.почта (по желанию)</label>-->
+            <!--<input style="width: 265px;" type="email" name="email" [(ngModel)]="data.email" #email="ngModel">-->
+            <!--</div>-->
+            <!--</div>-->
+
+            <!--</div>-->
+            <!--</div>-->
+            <button type="submit" [disabled]="RepairForm.form.invalid" class="main_button">Далее</button>
+        </form>
+    </div>
+</div>

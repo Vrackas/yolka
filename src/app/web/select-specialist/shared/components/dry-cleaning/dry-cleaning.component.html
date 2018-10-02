@@ -1,0 +1,234 @@
+<div class="modal-body">
+
+    <div class="form-group">
+        <label for="name">Выбор помещения</label>
+        <select id="name" [(ngModel)]="data.home" name="name"
+                #name="ngModel" required>
+            <option value="1">Диваны</option>
+            <option value="2">Ковры</option>
+            <option value="3">Матрасы</option>
+            <option value="4">Прочее</option>
+        </select>
+    </div>
+
+    <div *ngIf="data.home == 1 || data.home == 2 || data.home == 3 || data.home == 4">
+
+        <div class="form-group" *ngIf="data.home == 1">
+            <label for="sofaDot">Сколько посадочных мест на диване:</label>
+            <select id="sofaDot" [(ngModel)]="data.sofaDot" name="sofaDot"
+                    #name="ngModel" required>
+                <option value="1">2м</option>
+                <option value="2">3м</option>
+                <option value="3">4м</option>
+                <option value="4">5м</option>
+                <option value="5">6м</option>
+                <option value="6">7м</option>
+                <option value="7">более</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="material">В каком виде производим химчистку дивана:</label>
+            <select id="material" [(ngModel)]="data.material" name="material"
+                    #name="ngModel" required>
+                <option *ngIf="data.home == 1 || data.home == 4" value="1">кожа</option>
+                <option *ngIf="data.home == 1" value="2">кож.зам</option>
+                <option *ngIf="data.home == 1 || data.home == 4" value="3">тканевый</option>
+                <option *ngIf="data.home == 2" value="3">искусственный</option>
+                <option *ngIf="data.home == 2" value="3">натуральный</option>
+                <option *ngIf="data.home == 4" value="3">искус.кожа</option>
+            </select>
+        </div>
+
+        <div class="form-group" *ngIf="data.home == 1">
+            <label for="sortCleaner">В каком виде производим химчистку дивана:</label>
+            <select id="sortCleaner" [(ngModel)]="data.sortCleaner" name="sortCleaner"
+                    #name="ngModel" required>
+                <option value="1">в разложенном</option>
+                <option value="2">в сложенном</option>
+            </select>
+        </div>
+
+        <div class="form-group" *ngIf="data.home == 2">
+            <label for="carpet">Сколько квадратов ковер:</label>
+            <select id="carpet" [(ngModel)]="data.carpet" name="carpet"
+                    #name="ngModel" required>
+                <option value="1">до 3кв</option>
+                <option value="2">до 6кв</option>
+                <option value="3">до 10кв</option>
+                <option value="4">до 15кв</option>
+                <option value="5">до 20кв</option>
+                <option value="6">до 30кв</option>
+                <option value="7">свыше 30кв</option>
+            </select>
+        </div>
+
+        <div class="form-group" *ngIf="data.home == 3">
+            <label for="mattress">Сколько квадратов ковер:</label>
+            <select id="mattress" [(ngModel)]="data.mattress" name="mattress"
+                    #name="ngModel" required>
+                <option value="1">1м</option>
+                <option value="2">1,5м</option>
+                <option value="3">2м</option>
+                <option value="4">3м</option>
+            </select>
+        </div>
+
+        <div class="form-group" *ngIf="data.home == 4">
+            <label for="mattress">Сколько квадратов ковер:</label>
+            <label><input type="checkbox" [(ngModel)]="data.otherItems1">мини кресло</label>
+            <label><input type="checkbox" [(ngModel)]="data.otherItems2">обычное кресло</label>
+            <label><input type="checkbox" [(ngModel)]="data.otherItems3">пуфик</label>
+            <label><input type="checkbox" [(ngModel)]="data.otherItems4">большая подушка</label>
+            <label><input type="checkbox" [(ngModel)]="data.otherItems5">маленькая подушка</label>
+            <label><input type="checkbox" [(ngModel)]="data.otherItems6">кух.уголок</label>
+            <label><input type="checkbox" [(ngModel)]="data.otherItems7">коляски</label>
+            <label><input type="checkbox" [(ngModel)]="data.otherItems8">стул без спинки</label>
+            <label><input type="checkbox" [(ngModel)]="data.otherItems9">стул со спинкой</label>
+            <label><input type="checkbox" [(ngModel)]="data.otherItems10">другое</label>
+        </div>
+
+        <div class="form-group">
+            <label for="degree">Cтепень загрязнения:</label>
+            <select id="degree" [(ngModel)]="data.degree" name="degree"
+                    #name="ngModel" required>
+                <option value="1">пыль</option>
+                <option value="2">заляпали дети</option>
+                <option value="3">пролился лак или иные красящие вещества</option>
+                <option value="4">другое</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="mySelfdegree">Пробовали ли сами его чистить:</label>
+            <select id="mySelfdegree" [(ngModel)]="data.mySelfdegree" name="mySelfdegree"
+                    #name="ngModel" required>
+                <option value="1">Да (какими средствами ?)</option>
+                <option value="2">Нет</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="dryTime">Пробовали ли сами его чистить:</label>
+            <select id="dryTime" [(ngModel)]="data.dryTime" name="dryTime"
+                    #name="ngModel" required>
+                <option value="1">до недели</option>
+                <option value="2">до 2 недель</option>
+                <option value="2">до месяца</option>
+                <option value="2">до пол года</option>
+                <option value="2">до года</option>
+                <option value="2">более года</option>
+            </select>
+        </div>
+
+        <div class="all_end">
+
+            <div class="form-group">
+                <label for="take">Что принести?</label>
+                <label><input type="checkbox" name="take" value="1" [(ngModel)]="data.take1">пылесос</label>
+                <label><input type="checkbox" name="take" value="2" [(ngModel)]="data.take2">стремянка</label>
+                <label><input type="checkbox" name="take" value="3" [(ngModel)]="data.take3">другое</label>
+            </div>
+
+            <div class="form-group">
+                <label for="getSetKey">Нужен ли забор доставка ключей?</label>
+                <select id="getSetKey" [(ngModel)]="data.getSetKey" name="getSetKey"
+                        #name="ngModel" required>
+                    <option value="1">Да</option>
+                    <option value="2">Нет</option>
+                </select>
+            </div>
+
+            <div class="form-group" *ngIf="data.getSetKey == 1">
+                <label for="key_yes_from">Адрес забора ключей</label>
+                <label>
+                    <input type="text" name="key_yes_from" [(ngModel)]="data.key_yes_from" #key_yes_from="ngModel"
+                           required>
+                </label>
+            </div>
+            <div class="form-group" *ngIf="data.getSetKey == 1">
+                <label for="key_yes_to">Адрес достваки ключей</label>
+                <label>
+                    <input type="text" name="key_yes_to" [(ngModel)]="data.key_yes_to" #key_yes_to="ngModel" required>
+                </label>
+            </div>
+            <div class="form-group">
+                <label for="comments">Коментарий к заказу (то что мы у вас не уточнили):</label>
+                <div style="height: auto;">
+                    <label>
+                    <textarea rows="3" cols="90" type="text" name="comments" [(ngModel)]="data.comments"
+                              #comments="ngModel"></textarea>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="start_work">Нужен ли забор доставка ключей?</label>
+                <select id="start_work" [(ngModel)]="data.start_work" name="start_work"
+                        #name="ngModel" required>
+                    <option value="1">как можно быстрее, сегодня или завтра</option>
+                    <option value="2">в течении нескольких дней</option>
+                    <option value="2">выберу день в календаре</option>
+                    <option value="2">договорюсь со специалистом позже</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="mony">Оцените диапазон ожидаемой стоимости (можно пропустить):</label>
+                <div style="height: auto;" class="form-control">
+                    <label>от</label>
+                    <label>
+                        <input style="width: 265px;" type="number" name="mony_from" [(ngModel)]="data.mony_from"
+                               #mony_from="ngModel">
+                    </label>
+                    <label>од</label>
+                    <label>
+                        <input style="width: 265px;" type="number" name="mony_to" [(ngModel)]="data.mony_to"
+                               #mony_to="ngModel">
+                    </label>
+                </div>
+            </div>
+
+            <div style="text-align: center;" class="form-group">
+                <div style="height: auto;" class="form-control">
+                    <label>район или город облсти</label>
+                    <label>
+                        <input style="width: 265px;" type="text" name="where_city" [(ngModel)]="data.where_city"
+                               #where_city="ngModel" required="">
+                    </label>
+                    <label>адрес: ул., дом., корпус., квартира</label>
+                    <label>
+                        <input style="width: 265px;" type="text" name="where_address" [(ngModel)]="data.where_address"
+                               #where_address="ngModel" required="">
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="end">Заказ готов к публикации:</label>
+                <div style="height: auto;" class="form-control">
+                    <label for="phone">номер телефона</label>
+                    <input style="width: 265px;" type="text" name="phone" [(ngModel)]="data.phone" #phone="ngModel"
+                           required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div style="height: auto;" class="form-control">
+                    <label for="username">Имя и отчество</label>
+                    <input style="width: 265px;" type="text" name="username" [(ngModel)]="data.username"
+                           #username="ngModel"
+                           required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div style="height: auto;" class="form-control">
+                    <label for="email">эл.почта (по желанию)</label>
+                    <input style="width: 265px;" type="email" name="email" [(ngModel)]="data.email" #email="ngModel">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
