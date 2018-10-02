@@ -10,6 +10,7 @@ import { DataTemplateService } from "./shared/providers/count-templates.service"
 import { ChoiceStrategyComponent } from "./choice_strategy/choice-strategy.component";
 import { WindowsComponent } from "./windows/windows.component";
 import { AllEndComponent } from "./all-end/all-end.component";
+import { GeneralCleaningComponent } from "./general-cleaning/general-cleaning.component";
 
 @NgModule({
     imports: [
@@ -24,7 +25,8 @@ import { AllEndComponent } from "./all-end/all-end.component";
         TypesRepairsComponent,
         ChoiceStrategyComponent,
         WindowsComponent,
-        AllEndComponent
+        AllEndComponent,
+        GeneralCleaningComponent
     ],
     providers: [
         DataTemplateService
@@ -33,7 +35,8 @@ import { AllEndComponent } from "./all-end/all-end.component";
         TypesRepairsComponent,
         ChoiceStrategyComponent,
         WindowsComponent,
-        AllEndComponent
+        AllEndComponent,
+        GeneralCleaningComponent
     ]
 })
 export class ComponentsRepairsModalModule {

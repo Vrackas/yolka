@@ -42,24 +42,25 @@ export class TypesRepairsComponent implements OnInit {
             name: 'Поддерживающая'
         },
         {
-            id: 1,
+            id: 100,
             name: 'Генеральная'
         },
         {
-            id: 2,
+            id: 200,
             name: 'После ремонта'
         },
         {
-            id: 3,
+            id: 300,
             name: 'Окна / Балконы'
         },
         {
-            id: 4,
+            id: 400,
             name: 'Химчистка'
         },
     ];
     public data = {
-        count: 0
+        count: 0,
+        repair: 0
     };
 
     constructor(private dataTemplate: DataTemplateService) {
@@ -72,6 +73,7 @@ export class TypesRepairsComponent implements OnInit {
     }
 
     next(data: any) {
+        this.data['count'] = this.data['repair'];
         this.data['count']++;
         console.log(this.data);
         this.dataTemplate.changeTempate(this.data);
@@ -79,7 +81,7 @@ export class TypesRepairsComponent implements OnInit {
 
     select(id: number) {
         console.log(id, 'select repair');
-        this.data.count = id;
+        this.data['repair'] = id;
         this.dataTemplate.changeTempate(this.data);
     }
 

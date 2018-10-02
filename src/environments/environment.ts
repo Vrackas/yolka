@@ -5,6 +5,6 @@
 
 export const environment = {
     production: false,
-    apiHost: 'http://tuning.smartcapper.online/server/public/api/'
+    apiHost: 'http://yolka.smartcapper.online/server/public/api/'
     // apiHost: 'http://localhost:8888/admin-panel-backend/public/api/'
 };

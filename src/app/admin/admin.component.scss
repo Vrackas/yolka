@@ -7,6 +7,7 @@ app-sidebar {
 .account_panel {
     width: 60%;
     margin: 0 auto;
+    height: calc(100vh - 301px);
     .main_panel_account {
         margin-left: 320px;
         .navbar {
@@ -14,11 +15,18 @@ app-sidebar {
             p {
                 font: {
                     size: 24px;
-                    family: 'Open Sans', sans-serif;
+                    family: 'Museo Sans', sans-serif;
                     weight: bold;
                 }
                 color: #333;
             }
         }
     }
+}
+
+.backgraund {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #F8F8F8;
 }

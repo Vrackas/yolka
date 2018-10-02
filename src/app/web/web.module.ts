@@ -15,6 +15,8 @@ import {RegistrationModalComponent} from "./shared/components/registration_modal
 import {ForgotPasswordModalComponent} from "./shared/components/forgot_password_modal/forgot_password_modal.component";
 import { AdminModule } from '../admin/admin.module';
 import { ComponentsRepairsModalModule } from './shared/components/select_spec_modal/components/components-repairs-modal.modal';
+import { RoleGuardService } from '../shared/guard/role-guard.service';
+import { SelectSpecialistModule } from './select-specialist/select-specialist.module';
 
 @NgModule({
     imports: [
@@ -26,7 +28,8 @@ import { ComponentsRepairsModalModule } from './shared/components/select_spec_mo
         FooterModule,
         ModalModule.forRoot(),
         AdminModule,
-        ComponentsRepairsModalModule
+        ComponentsRepairsModalModule,
+        SelectSpecialistModule
     ],
     declarations: [
         WebComponent,
@@ -38,7 +41,7 @@ import { ComponentsRepairsModalModule } from './shared/components/select_spec_mo
         ForgotPasswordModalComponent
     ],
     providers: [
-
+        RoleGuardService
     ],
     entryComponents: [
         SelectSpecModalComponent,
