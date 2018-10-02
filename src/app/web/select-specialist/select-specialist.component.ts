@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import {Component, OnInit} from "@angular/core";
+import {DataTemplateService} from "./shared/providers/count-templates.service";
 
 @Component({
     selector: 'app-select-specialist',
@@ -29,13 +30,24 @@ export class SelectSpecialistComponent implements OnInit {
             name: 'Химчистка'
         },
     ];
-    public data = {    };
+    public data = {};
 
-    constructor() {
+    constructor(public dataType: DataTemplateService) {
 
     }
 
     ngOnInit() {
+        this.dataType.currentTemplate.subscribe(data => {
+            this.data = data;
+            console.log(data);
+        });
+    }
 
+    next() {
+        console.log(this.data);
+    }
+
+    select() {
+        this.dataType.changeTempate(this.data);
     }
 }

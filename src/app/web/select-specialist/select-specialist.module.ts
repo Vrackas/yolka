@@ -6,6 +6,7 @@ import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { SelectSpecialistComponent } from "./select-specialist.component";
 import { TypeCleanersModule } from "./shared/components/type-cleaners.module";
+import {DataTemplateService} from "./shared/providers/count-templates.service";
 
 @NgModule({
     imports: [
@@ -20,6 +21,7 @@ import { TypeCleanersModule } from "./shared/components/type-cleaners.module";
         SelectSpecialistComponent
     ],
     providers: [
+        DataTemplateService
     ],
 })
 export class SelectSpecialistModule {

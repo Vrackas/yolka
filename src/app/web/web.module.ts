@@ -17,6 +17,7 @@ import { AdminModule } from '../admin/admin.module';
 import { ComponentsRepairsModalModule } from './shared/components/select_spec_modal/components/components-repairs-modal.modal';
 import { RoleGuardService } from '../shared/guard/role-guard.service';
 import { SelectSpecialistModule } from './select-specialist/select-specialist.module';
+import { SelectSpecialistSecondModule } from './select-specialist-second/select-specialist-second.module';
 
 @NgModule({
     imports: [
@@ -29,7 +30,8 @@ import { SelectSpecialistModule } from './select-specialist/select-specialist.mo
         ModalModule.forRoot(),
         AdminModule,
         ComponentsRepairsModalModule,
-        SelectSpecialistModule
+        SelectSpecialistModule,
+        SelectSpecialistSecondModule
     ],
     declarations: [
         WebComponent,

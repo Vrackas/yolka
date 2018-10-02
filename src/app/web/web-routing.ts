@@ -12,6 +12,8 @@ import { MyClientComponent } from '../admin/my-clients/my-clients.component';
 import { PersonalRoomCleanerComponent } from '../admin/personal-room-cleaner/personal-room-cleaner.component';
 import { SelectSpecialistComponent } from './select-specialist/select-specialist.component';
 import { GetMyCleaningResolve } from '../admin/shared/resolvers/get-my-cleaning-resolve.service';
+import { SelectSpecialistSecondComponent } from './select-specialist-second/select-specialist-second.component';
+import { GetAllCleaningResolve } from './select-specialist-second/shared/resolvers/get-all-cleaning-resolve.service';
 
 const WEB_ROUTING: Routes = [
     {
@@ -30,6 +32,13 @@ const WEB_ROUTING: Routes = [
             {
                 path: 'select-specialist',
                 component: SelectSpecialistComponent
+            },
+            {
+                path: 'select-specialist-second',
+                component: SelectSpecialistSecondComponent,
+                resolve: {
+                    data: GetAllCleaningResolve
+                }
             },
             {
                 path: 'admin',

@@ -10,6 +10,9 @@ export const APP_URL = {
     },
     'client': {
         all: api + 'get-my-cleaning'
+    },
+    'incognito': {
+        all: api + 'get-my-cleaning'
     }
 
 };
