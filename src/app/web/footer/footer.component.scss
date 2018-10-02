@@ -78,6 +78,16 @@
 
     }
   }
+  .middle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    a{
+      color: #999999;
+      font-weight: 200;
+    }
+  }
   .bottom {
     text-align: center;
     padding-bottom: 15px;

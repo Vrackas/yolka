@@ -15,7 +15,7 @@ declare interface RouteInfo {
 export const ROUTES: RouteInfo[] = [
     { path: 'personal-room', title: 'Личный кабинет',  class: '', access: [ROLES.Admin] },
     { path: 'my-cleaners', title: 'Мои уборки',  class: '', access: [ROLES.Admin] },
-    { path: 'my-clients', title: 'Мои клинеры',  class: '', access: [ROLES.Admin] },
+    { path: 'my-clients', title: 'Мои специалисты',  class: '', access: [ROLES.Admin] },
     { path: 'payment', title: 'Реквизиты',  class: '', access: [ROLES.Admin, ROLES.Admin] },
     { path: 'notifications', title: 'Настройки',  class: '', access: [ROLES.Admin] },
     { path: 'notifications', title: 'Вопросы',  class: '', access: [ROLES.Admin] },

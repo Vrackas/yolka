@@ -5,6 +5,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { SelectSpecModalComponent } from "../shared/components/select_spec_modal/select_spec_modal.component";
 import { element } from "protractor";
 import { AuthService } from '../../auth/shared/services/auth.service';
+import {EntryModalComponent} from "../shared/components/entry_modal/entry_modal.component";
 
 
 declare interface SignInData {
@@ -121,9 +122,8 @@ export class HomeComponent {
 
 
     openModal(): void {
-        this.modalRef = this.modalService.show(SelectSpecModalComponent, {
+        this.modalRef = this.modalService.show(EntryModalComponent, {
             initialState: {
-                title: 'Виды уборки',
                 data: {}
             }
 
