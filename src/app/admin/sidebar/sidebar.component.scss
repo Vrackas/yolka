@@ -1,6 +1,6 @@
 .sub_menu {
   width: 220px;
-  height: 507px;
+  //height: 507px;
   ul {
     .title_sidbar_block {
       font: {
@@ -55,6 +55,11 @@
           color: #0099D7;
          }
        }
+      }
+    }
+    li:nth-child(1){
+      .shape{
+        display: none;
       }
     }
   }

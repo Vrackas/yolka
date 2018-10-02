@@ -4,7 +4,7 @@ import {CommonModule} from '@angular/common';
 import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
 import {WebComponent} from "./web.component";
-import {CleaningInfoComponent} from "../admin/cleaning-info/cleaning-info.component";
+// import {CleaningInfoComponent} from "../admin/cleaning-info/cleaning-info.component";
 import { AdminComponent } from '../admin/admin.component';
 import {SpecialistsComponent} from "./specialists/specialists.component";
 

@@ -278,6 +278,87 @@
       }
     }
   }
+
+  .requirements_section{
+    background: {
+      color: #F8F8F8;
+    };
+    .container{
+      width: 680px;
+      .block{
+        display: flex;
+        flex-direction: row;
+        margin-bottom: -2px;
+        .left{
+          background: {
+            image: url(assets/img/web/about/third_section.png);
+            repeat: no-repeat;
+            size: contain;
+          }
+          height: 270px;
+          width: 277px;
+          //padding: 0 220px;;
+        }
+        .right{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          //align-items: flex-end;
+padding: 0 15px;
+          a{
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  .payments_section{
+    .container{
+      width: 600px;
+      .block{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 50px 0;
+        h4{
+          margin-top: 10px;
+          font-weight: bold;
+          text-align: center;
+        }
+        span{
+          font-weight: bold;
+        }
+        button{
+          margin-top: 40px;
+        }
+      }
+    }
+  }
+
+  .business_section{
+    background: {
+      image: url(assets/img/web/specialists/business_section.png);
+      repeat: no-repeat;
+      size: cover;
+      position: center;
+    };
+    margin-bottom: -2px;
+    .container{
+      width: 600px;
+      padding: 50px 0;
+      text-align: center;
+      h2{
+        color: #FFFFFF;
+        font-weight: normal;
+      }
+      p{
+        margin: 55px 0;
+        color: #FFFFFF;
+      }
+
+    }
+  }
   //media
 
   @media (min-width: 1500px) {
@@ -446,6 +527,33 @@
         }
       }
     }
+    .requirements_section{
+      .container{
+        width: 400px;
+        .block{
+          text-align: center;
+          padding: 50px 0;
+          .left{
+            display: none;
+          }
+        }
+      }
+    }
+    .payments_section{
+      .container{
+        width: 100%;
+        .block{
+          flex-wrap: wrap;
+          justify-content: space-around;
+
+        }
+      }
+    }
+    .business_section {
+      .container {
+        width: 500px;
+      }
+    }
   }
 
   @media (max-width: 540px) {
@@ -528,6 +636,42 @@
             text-align: center;
           }
         }
+      }
+    }
+    .requirements_section{
+      .container{
+        width: 100%;
+        .block{
+          text-align: center;
+          padding: 50px 0;
+          .left{
+            display: none;
+          }
+        }
+      }
+    }
+    .payments_section {
+      .container{
+        width: 100%;
+        .block{
+          flex-wrap: wrap;
+          flex-direction: column;
+          align-items: center;
+          .right{
+            display: flex;
+            flex-direction: column;
+          }
+          button{
+            margin: 30px auto 0;
+            align-self: center;
+          }
+
+        }
+      }
+    }
+    .business_section {
+      .container {
+        width: 100%;
       }
     }
   }

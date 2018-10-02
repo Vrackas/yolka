@@ -7,7 +7,7 @@ app-sidebar {
 .account_panel {
     width: 60%;
     margin: 0 auto;
-    height: calc(100vh - 301px);
+    min-height: calc(100vh - 301px);
     .main_panel_account {
         margin-left: 320px;
         min-height: calc(100vh - 423px);
