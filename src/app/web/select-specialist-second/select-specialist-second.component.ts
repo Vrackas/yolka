@@ -9,6 +9,7 @@ import { DataTemplateService } from "../select-specialist/shared/providers/count
 export class SelectSpecialistSecondComponent implements OnInit {
 
     public data: any;
+    public form: any;
     list = [
         {
             avatar: 'assets/img/admin/camp.png',
@@ -46,6 +47,13 @@ export class SelectSpecialistSecondComponent implements OnInit {
 
     next() {
         console.log(this.data);
+        // switch (this.data) {
+        //     case:
+        // }
+        this.form = {
+            type: this.data['repair'],
+            syub_type: this.data['home'],
+        };
     }
 
     select() {
