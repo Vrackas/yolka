@@ -55,8 +55,9 @@ export class SidebarComponent implements OnInit {
     //     return true;
     // }
 
-    // logout() {
-    //     this.localStorageService.clear();
-    //     this.router.navigate(['auth/sign-in']);
-    // }
+    logout() {
+        this.localStorageService.clear();
+        this.router.navigate(['web/home']);
+        location.reload();
+    }
 }
