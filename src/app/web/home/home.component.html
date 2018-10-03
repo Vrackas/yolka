@@ -56,7 +56,7 @@
                 <div class="choose_item" *ngFor="let item of advantage_choose_list">
                     <img src="{{item.img}}" alt="">
                     <h4>{{item.title}}</h4>
-                    <button class="main_button"  [routerLink]="['../select-specialist']">Выбрать специалиста <i class="fas fa-angle-right"></i></button>
+                    <button class="main_button"  (click)="selectSpec()">Выбрать специалиста <i class="fas fa-angle-right"></i></button>
                 </div>
             </div>
 
@@ -192,7 +192,7 @@
             <div class="left_block">
                 <h3>ура!</h3>
                 <p>До вашего первого заказа с Yolka осталось не сколько минут!</p>
-                <button class="main_button" (click)="openModal()">Войти</button>
+                <button class="main_button" [routerLink]="['../login']">Войти</button>
             </div>
         </div>
 
@@ -223,7 +223,7 @@
             <img src="../assets/img/web/home/feedback_vk_test.png" alt="">
         </div>
         <div class="bottom">
-            <div class="main_button" [routerLink]="['../select-specialist']">выбрать специалиста</div>
+            <div class="main_button" (click)="selectSpec()">выбрать специалиста</div>
         </div>
     </div>
 

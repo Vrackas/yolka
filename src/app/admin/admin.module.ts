@@ -10,6 +10,8 @@ import { MyCleanersModule } from "./my-cleaners/my-cleaners.module";
 import { PerosnalRoomClientModule } from "./personal-room-client/personal-room-client.module";
 import { GetMyCleaningService } from "./shared/services/get-my-cleaning.service";
 import { GetMyCleaningResolve } from "./shared/resolvers/get-my-cleaning-resolve.service";
+import { MyCleaningModule } from "./my-cleaning/my-cleaning.module";
+import { GetMyCleaningsResolve } from "./shared/resolvers/get-my-cleanings-resolve.service";
 
 @NgModule({
     imports: [
@@ -19,7 +21,8 @@ import { GetMyCleaningResolve } from "./shared/resolvers/get-my-cleaning-resolve
         PerosnalRoomClientModule,
         MyCleanersModule,
         MyClientModule,
-        PerosnalRoomCleanerModule
+        PerosnalRoomCleanerModule,
+        MyCleaningModule
     ],
     declarations: [
         AdminComponent,
@@ -27,7 +30,8 @@ import { GetMyCleaningResolve } from "./shared/resolvers/get-my-cleaning-resolve
     ],
     providers: [
         GetMyCleaningService,
-        GetMyCleaningResolve
+        GetMyCleaningResolve,
+        GetMyCleaningsResolve
     ]
 })
 export class AdminModule {

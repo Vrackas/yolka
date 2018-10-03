@@ -3,11 +3,11 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { BsModalService } from "ngx-bootstrap";
 
 @Component({
-    selector: 'app-my-clients',
-    templateUrl: './my-clients.component.html',
-    styleUrls: ['./my-clients.component.scss']
+    selector: 'app-my-cleaning',
+    templateUrl: './my-cleaning.component.html',
+    styleUrls: ['./my-cleaning.component.scss']
 })
-export class MyClientComponent implements OnInit {
+export class MyCleaningComponent implements OnInit {
 
     // list = [
     //     {

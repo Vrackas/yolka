@@ -14,4 +14,9 @@ export class GetMyCleaningService extends EntityService {
         let url = this.url('all');
         return this.request.get(url);
     }
+
+    getMyCleanings() {
+        let url = this.url('my');
+        return this.request.get(url);
+    }
 }
