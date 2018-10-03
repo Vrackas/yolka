@@ -9,7 +9,8 @@ export const APP_URL = {
         logout: api + 'logout'
     },
     'client': {
-        all: api + 'get-my-cleaning'
+        all: api + 'get-my-cleaning',
+        my: api + 'get-my-cleaners'
     },
     'incognito': {
         all: api + 'get-all-cleaners',

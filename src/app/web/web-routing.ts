@@ -20,6 +20,8 @@ import { GetAllCleaningResolve } from './select-specialist-second/shared/resolve
 import { SortComponent } from './auth/sort/sort.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { MyCleaningComponent } from '../admin/my-cleaning/my-cleaning.component';
+import { GetMyCleaningsResolve } from '../admin/shared/resolvers/get-my-cleanings-resolve.service';
 
 const WEB_ROUTING: Routes = [
     {
@@ -73,7 +75,7 @@ const WEB_ROUTING: Routes = [
                         path: 'personal-room-client',
                         component: PersonalRoomClientComponent,
                         resolve: {
-                            data: GetMyCleaningResolve
+                            data: GetMyCleaningsResolve
                         }
                     },
                     {
@@ -88,8 +90,18 @@ const WEB_ROUTING: Routes = [
                         }
                     },
                     {
+                        path: 'my-cleaning',
+                        component: MyCleaningComponent,
+                        resolve: {
+                            data: GetMyCleaningsResolve
+                        }
+                    },
+                    {
                         path: 'my-clients',
-                        component: MyClientComponent
+                        component: MyClientComponent,
+                        resolve: {
+                            data: GetMyCleaningsResolve
+                        }
                     }
                 ]
             }

@@ -1,4 +1,5 @@
-import {Component, OnInit} from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
     selector: 'app-personal-room-client',
@@ -7,11 +8,16 @@ import {Component, OnInit} from "@angular/core";
 })
 export class PersonalRoomClientComponent implements OnInit {
 
-    constructor() {
+    public user: any;
+
+    constructor(public route: ActivatedRoute) {
 
     }
 
     ngOnInit() {
+        this.route.data.forEach(data => {
+            this.user = data['data']['entity'][0]['cleaner'];
+        });
         console.log('cleaing');
     }
 }
