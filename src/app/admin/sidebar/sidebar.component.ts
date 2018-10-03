@@ -5,23 +5,24 @@ import { Router } from '@angular/router';
 
 declare const $: any;
 
-declare interface RouteInfo {
-    path: string;
-    title: string;
-    class: string;
-    access: Array<number>;
-}
+// declare interface RouteInfo {
+//     path: string;
+//     title: string;
+//     class: string;
+//     access: Array<any>;
+// }
 
-export const ROUTES: RouteInfo[] = [
-    { path: 'personal-room', title: 'Личный кабинет',  class: '', access: [ROLES.Admin] },
-    { path: 'my-cleaners', title: 'Мои уборки',  class: '', access: [ROLES.Admin] },
-    { path: 'my-clients', title: 'Мои специалисты',  class: '', access: [ROLES.Admin] },
-    { path: 'payment', title: 'Реквизиты',  class: '', access: [ROLES.Admin, ROLES.Admin] },
-    { path: 'notifications', title: 'Настройки',  class: '', access: [ROLES.Admin] },
-    { path: 'notifications', title: 'Вопросы',  class: '', access: [ROLES.Admin] },
-    { path: 'notifications', title: 'Больше интересного',  class: '', access: [ROLES.Admin] },
-    { path: 'notifications', title: 'Выход',  class: '', access: [ROLES.Admin] },
-  ];
+// export const ROUTES: RouteInfo[] = [
+//     { path: 'personal-room', title: 'Личный кабинет', class: '', access: [ROLES.Cleaner, ROLES.Customer] },
+//     { path: 'my-cleaners', title: 'Мои уборки', class: '', access: [ROLES.Cleaner, ROLES.Customer] },
+//     { path: 'my-clianing', title: 'Мои специалисты', class: '', access: [ROLES.Customer] },
+//     { path: 'my-clients', title: 'Мои клиенты', class: '', access: [ROLES.Cleaner] },
+//     { path: 'payment', title: 'Реквизиты', class: '', access: [ROLES.Cleaner, ROLES.Customer] },
+//     { path: 'notifications', title: 'Настройки', class: '', access: [ROLES.Cleaner, ROLES.Customer] },
+//     { path: 'notifications', title: 'Вопросы', class: '', access: [ROLES.Cleaner, ROLES.Customer] },
+//     { path: 'notifications', title: 'Больше интересного', class: '', access: [ROLES.Cleaner, ROLES.Customer] },
+//     { path: 'notifications', title: 'Выход', class: '', access: [ROLES.Cleaner, ROLES.Customer] },
+// ];
 
 @Component({
     selector: 'app-sidebar',
@@ -36,12 +37,12 @@ export class SidebarComponent implements OnInit {
         localstorageService: LocalStorageService,
         public router: Router,
         public localStorageService: LocalStorageService) {
-        // this.user = localstorageService.get('user');
+        this.user = localstorageService.get('user');
         console.log(this.user);
     }
 
     ngOnInit() {
-        this.menuItems = ROUTES;
+        // this.menuItems = ROUTES;
         // this.menuItems = ROUTES.filter(menuItem => {
         //     return menuItem.access.indexOf(this.user.role_id) !== -1;
         // });

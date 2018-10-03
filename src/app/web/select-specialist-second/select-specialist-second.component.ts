@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { DataTemplateService } from "../select-specialist/shared/providers/count-templates.service";
 import { LocalStorageService } from "ngx-store";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { GetAllCleaningService } from "./shared/services/get-all-cleaning.service";
 
 @Component({
@@ -41,7 +41,8 @@ export class SelectSpecialistSecondComponent implements OnInit {
         public localStorageService: LocalStorageService,
         public dataType: DataTemplateService,
         public route: ActivatedRoute,
-        public service: GetAllCleaningService
+        public service: GetAllCleaningService,
+        public router: Router
     ) {
 
     }
@@ -72,7 +73,9 @@ export class SelectSpecialistSecondComponent implements OnInit {
             cleaner_id: id,
             date: new Date()
         };
-        this.service.createCleaner(this.form).subscribe();
+        this.service.createCleaner(this.form).subscribe(() => {
+            this.router.navigate(['web/admin/my-cleaners']);
+        });
     }
 
     select() {

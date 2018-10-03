@@ -11,10 +11,59 @@
                         </li> -->
                 <!-- <li class="separator hidden-lg hidden-md"></li> -->
                 <!-- <p class="title_sidbar_block">Личный кабинет</p> -->
-                <li style="width: 100%" routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}}">
-                    <a style="padding: 10px" [routerLink]="[menuItem.path]">
-                        <i class="{{menuItem.icon}}"></i>
-                        <p>{{menuItem.title}}</p>
+                <li style="width: 100%" routerLinkActive="active">
+                    <a style="padding: 10px" [routerLink]="['personal-room']">
+                        <!-- <i class="{{menuItem.icon}}"></i> -->
+                        <p>Личный кабинет</p>
+                        <div class="shape"></div>
+                    </a>
+                </li>
+                <li style="width: 100%" routerLinkActive="active">
+                    <a style="padding: 10px" [routerLink]="['my-cleaners']">
+                        <!-- <i class="{{menuItem.icon}}"></i> -->
+                        <p>Мои уборки</p>
+                        <div class="shape"></div>
+                    </a>
+                </li>
+                <li *ngIf="user.role == 'customer'" style="width: 100%" routerLinkActive="active">
+                    <a style="padding: 10px" [routerLink]="['my-cleaning']">
+                        <p>Мои специалисты</p>
+                        <div class="shape"></div>
+                    </a>
+                </li>
+                <li *ngIf="user.role == 'cleaner'" style="width: 100%" routerLinkActive="active">
+                    <a style="padding: 10px" [routerLink]="['my-clients']">
+                        <p>Мои клиенты</p>
+                        <div class="shape"></div>
+                    </a>
+                </li>
+                <li style="width: 100%" routerLinkActive="active">
+                    <a style="padding: 10px" >
+                        <p>Реквизиты</p>
+                        <div class="shape"></div>
+                    </a>
+                </li>
+                <li style="width: 100%" routerLinkActive="active">
+                    <a style="padding: 10px">
+                        <p>Настройки</p>
+                        <div class="shape"></div>
+                    </a>
+                </li>
+                <li style="width: 100%" routerLinkActive="active">
+                    <a style="padding: 10px">
+                        <p>Вопросы</p>
+                        <div class="shape"></div>
+                    </a>
+                </li>
+                <li style="width: 100%" routerLinkActive="active">
+                    <a style="padding: 10px">
+                        <p>Больше интересного</p>
+                        <div class="shape"></div>
+                    </a>
+                </li>
+                <li style="width: 100%" routerLinkActive="active">
+                    <a style="padding: 10px" [routerLink]="['../home']">
+                        <p>Выход</p>
                         <div class="shape"></div>
                     </a>
                 </li>

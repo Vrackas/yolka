@@ -12,10 +12,10 @@
                             <tbody>
                                 <tr *ngFor="let row of list">
                                     <td>{{row.date | date: 'M.d.yyyy'}}</td>
-                                    <td>{{row.typeCleaner}}</td>
-                                    <td *ngIf="role == 'cleaner'">{{row.profesional}}</td>
-                                    <td *ngIf="role == 'customer'">{{row.client}}</td>
-                                    <td>{{row.cost}}</td>
+                                    <td>{{row.type}}</td>
+                                    <td>{{row.cleaner.name}}</td>
+                                    <!-- <td *ngIf="role == 'customer'">{{row.client}}</td> -->
+                                    <td>{{row.price}}</td>
                                 </tr>
                             </tbody>
                         </table>
