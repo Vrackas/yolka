@@ -1,8 +1,9 @@
-import {Component, HostListener} from '@angular/core';
-import {BsModalService} from 'ngx-bootstrap/modal';
-import {BsModalRef} from 'ngx-bootstrap/modal/bs-modal-ref.service';
+import { Component, HostListener } from '@angular/core';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 
-import {EntryModalComponent} from "../shared/components/entry_modal/entry_modal.component";
+import { EntryModalComponent } from "../shared/components/entry_modal/entry_modal.component";
+import { LocalStorageService } from 'ngx-store';
 
 @Component({
     selector: 'app-header',
@@ -12,9 +13,15 @@ import {EntryModalComponent} from "../shared/components/entry_modal/entry_modal.
 export class HeaderComponent {
 
     modalRef: BsModalRef;
+    change: boolean;
 
-    constructor(private modalService: BsModalService) {
-        // console.log('home Component is loaded');
+    constructor(private modalService: BsModalService,
+        public localStorageService: LocalStorageService) {
+        if (this.localStorageService.get('user')) {
+            this.change = true;
+        } else {
+            this.change = false;
+        }
     }
 
     private element: any;
@@ -24,7 +31,7 @@ export class HeaderComponent {
         this.element.classList.add('active');
     }
 
-    headerWrapperClose(){
+    headerWrapperClose() {
         this.element = document.getElementsByClassName('header_site_wrapper')[0];
         this.element.classList.remove('active');
     }
@@ -40,7 +47,6 @@ export class HeaderComponent {
             initialState: {
                 data: {}
             }
-
         });
     }
 }
