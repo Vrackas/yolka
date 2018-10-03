@@ -49,4 +49,8 @@ export class HeaderComponent {
             }
         });
     }
+
+    reload() {
+        location.reload();
+    }
 }

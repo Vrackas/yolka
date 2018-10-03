@@ -58,5 +58,6 @@ export class SidebarComponent implements OnInit {
     logout() {
         this.localStorageService.clear();
         this.router.navigate(['web/home']);
+        location.reload();
     }
 }
