@@ -72,6 +72,9 @@ const WEB_ROUTING: Routes = [
                     {
                         path: 'personal-room-client',
                         component: PersonalRoomClientComponent,
+                        resolve: {
+                            data: GetMyCleaningResolve
+                        }
                     },
                     {
                         path: 'personal-room-cleaner',
