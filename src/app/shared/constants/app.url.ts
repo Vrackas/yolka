@@ -12,7 +12,12 @@ export const APP_URL = {
         all: api + 'get-my-cleaning'
     },
     'incognito': {
-        all: api + 'get-my-cleaning'
+        all: api + 'get-all-cleaners',
+        create: api + 'clean-order'
+    },
+    'user': {
+        login: api + 'login',
+        register: api + 'register'
     }
 
 };

@@ -1,27 +1,28 @@
 import { Injectable } from "@angular/core";
+import { tap } from "rxjs/operators";
 import { EntityService } from "../../../../shared/base/entity.service";
 import { RequestService } from "../../../../shared/services/request.service";
-import { tap } from "rxjs/operators";
 
 @Injectable()
-export class GetAllCleaningService extends EntityService {
+export class AuthSecondService extends EntityService {
 
     constructor(public request: RequestService) {
         super(request);
-        this.service_name = 'incognito';
+        this.service_name = 'user';
     }
 
-    getAllCleaning() {
-        let url = this.url('all');
-        return this.request.get(url);
+    login(data) {
+        let url = this.url('login');
+        return this.request.post(url, data);
     }
 
-    createCleaner(data: any) {
-        let url = this.url('create');
+    register(data) {
+        let url = this.url('register');
         return this.request.post(url, data)
             .pipe(tap(() => {
-                const msg = this.msg('create');
+                const msg = this.msg('register');
                 this.notification('success', msg);
             }));
     }
+
 }

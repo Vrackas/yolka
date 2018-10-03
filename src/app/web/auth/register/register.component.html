@@ -1,0 +1,50 @@
+<div style="background: #f8f8f8; padding-bottom: 40px;">
+    <div class="top_section">
+    </div>
+    <div style="max-width: 400px;" class="container">
+        <div class="modal-body">
+            <form class="col" (ngSubmit)="register()" #LoginForm="ngForm">
+
+                <div class="form-group">
+                    <label for="name">Имя</label>
+                    <input type="name" class="form-control" id="name" [(ngModel)]="userData.name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="surname">Фамилия</label>
+                    <input type="surname" class="form-control" id="surname" [(ngModel)]="userData.surname" name="surname" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Почта</label>
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com" [(ngModel)]="userData.email" name="email"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Телефон</label>
+                    <input type="phone" class="form-control" id="phone" [(ngModel)]="userData.phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Пароль</label>
+                    <input type="password" class="form-control" id="password" [(ngModel)]="userData.password" name="password" required>
+                </div>
+
+                <div style="margin: 0 auto; text-align: center" class="col">
+                    <div class="row">
+                        <button style="width: 180px;" type="submit" class="main_button">Зарегистрироваться</button>
+                    </div>
+                    <div class="row">
+                        <a>Забыли пароль?</a>
+                    </div>
+                    <div class="row">
+                        <a [routerLink]="['../login']">Войти</a>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>

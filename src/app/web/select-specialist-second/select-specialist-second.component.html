@@ -3,23 +3,24 @@
     </div>
     <div class="container">
         <div class="col-12">
+            <h2>Стоимость услуг: {{data.price}} рублей</h2>
             <div class="col">
                 <div class="row cleaning" style="text-align: center">
                     <div class="col col-md-3 profile_info" *ngFor="let user of list">
                         <div class="avatar">
-                            <img [src]="user.avatar" alt="">
+                            <img src="assets/img/admin/camp.png" alt="">
                         </div>
                         <div class="body_info">
-                            <h2>{{user.name}}</h2>
+                            <h2>{{user.name}}  {{user.surname}}</h2>
                             <p>{{user.positions}}</p>
                             <div>
-                        <span>
-                            <div class="icon"></div>
-                            <p>{{user.like}}</p>
-                        </span>
-                                <p>Отзывов: {{user.feadback}}</p>
+                                <span>
+                                    <div class="icon"></div>
+                                    <p>4.9</p>
+                                </span>
+                                <p>Отзывов: 12</p>
                             </div>
-                            <button class="main_button">Выбрать</button>
+                            <button (click)="takeCleaner(user.id)" class="main_button">Выбрать</button>
                         </div>
                     </div>
                 </div>
