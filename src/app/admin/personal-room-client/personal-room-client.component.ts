@@ -9,6 +9,7 @@ import { ActivatedRoute } from "@angular/router";
 export class PersonalRoomClientComponent implements OnInit {
 
     public user: any;
+    public open: boolean;
 
     constructor(public route: ActivatedRoute) {
 
@@ -16,7 +17,12 @@ export class PersonalRoomClientComponent implements OnInit {
 
     ngOnInit() {
         this.route.data.forEach(data => {
-            this.user = data['data']['entity'][0]['cleaner'];
+            if (data['data']['entity'].length) {
+                this.user = data['data']['entity'][0]['cleaner'];
+                this.open = true;
+            } else {
+                this.open = false;
+            }
         });
         console.log('cleaing');
     }

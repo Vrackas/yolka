@@ -1,5 +1,5 @@
 <div class="col-12">
-    <div class="col">
+    <div class="col" *ngIf="open">
         <div class="row cleaning">
             <div class="col col-sm-6 timer_block">
                 <div>
@@ -18,4 +18,9 @@
             </div>
         </div>
     </div>
+    <div class="col" *ngIf="!open">
+            <div class="card">
+                <p>Здесь будет отображаться информаци о ваших заказах</p>
+            </div>
+        </div>
 </div>

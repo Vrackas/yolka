@@ -1,5 +1,5 @@
 <div class="col-12">
-    <div class="col">
+    <div class="col" *ngIf="list.length">
         <div class="row cleaning">
             <div class="col col-md-3 profile_info" *ngFor="let user of list">
                 <div class="avatar">
@@ -18,6 +18,11 @@
                     <a>Подробнее</a>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="col" *ngIf="!list.length">
+        <div class="card">
+            <p>Здесь будет отображаться информаци о ваших заказах</p>
         </div>
     </div>
 </div>
