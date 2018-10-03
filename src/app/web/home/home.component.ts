@@ -5,7 +5,9 @@ import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { SelectSpecModalComponent } from "../shared/components/select_spec_modal/select_spec_modal.component";
 import { element } from "protractor";
 import { AuthService } from '../../auth/shared/services/auth.service';
-import {EntryModalComponent} from "../shared/components/entry_modal/entry_modal.component";
+import { EntryModalComponent } from "../shared/components/entry_modal/entry_modal.component";
+import { LocalStorageService } from 'ngx-store';
+import { Router } from '@angular/router';
 
 
 declare interface SignInData {
@@ -117,7 +119,9 @@ export class HomeComponent {
     constructor(
         private modalService: BsModalService,
         public el: ElementRef,
-        public auth: AuthService) {
+        public auth: AuthService,
+        public localStorageService: LocalStorageService,
+        public router: Router) {
     }
 
 
@@ -130,6 +134,13 @@ export class HomeComponent {
         });
     }
 
+    selectSpec() {
+        if (!this.localStorageService.get('user')) {
+            this.router.navigate(['web/login']);
+        } else {
+            this.router.navigate(['web/select-specialist']);
+        }
+    }
 
     accordionEffect(id: string) {
         let element = document.getElementById(id);

@@ -1,5 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { DataTemplateService } from "../select-specialist/shared/providers/count-templates.service";
+import { LocalStorageService } from "ngx-store";
+import { ActivatedRoute } from "@angular/router";
+import { GetAllCleaningService } from "./shared/services/get-all-cleaning.service";
 
 @Component({
     selector: 'app-select-specialist-second',
@@ -34,26 +37,42 @@ export class SelectSpecialistSecondComponent implements OnInit {
         }
     ];
 
-    constructor(public dataType: DataTemplateService) {
+    constructor(
+        public localStorageService: LocalStorageService,
+        public dataType: DataTemplateService,
+        public route: ActivatedRoute,
+        public service: GetAllCleaningService
+    ) {
 
     }
 
     ngOnInit() {
         this.dataType.currentTemplate.subscribe(data => {
             this.data = data;
-            console.log(data);
+            if (!this.localStorageService.get('price')) {
+                this.localStorageService.set('price', data['price']);
+            } else if (this.localStorageService.get('price') != this.data['price']) {
+                this.localStorageService.set('price', data['price']);
+            } else {
+                this.data = this.localStorageService.get('data');
+                this.data['price'] = this.localStorageService.get('price');
+            }
+        });
+        this.route.data.forEach(data => {
+            this.list = data['data']['entity'];
         });
     }
 
-    next() {
+    takeCleaner(id) {
         console.log(this.data);
-        // switch (this.data) {
-        //     case:
-        // }
         this.form = {
-            type: this.data['repair'],
-            syub_type: this.data['home'],
+            type: this.data['type'],
+            subtype: this.data['sub_type'],
+            price: this.data['price'],
+            cleaner_id: id,
+            date: new Date()
         };
+        this.service.createCleaner(this.form).subscribe();
     }
 
     select() {

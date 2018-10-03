@@ -20,6 +20,7 @@ import {SpecialistsModule} from "./specialists/specialists.module";
 import { RoleGuardService } from '../shared/guard/role-guard.service';
 import { SelectSpecialistModule } from './select-specialist/select-specialist.module';
 import { SelectSpecialistSecondModule } from './select-specialist-second/select-specialist-second.module';
+import { AuthSecondModule } from './auth/auth.modal';
 
 @NgModule({
     imports: [
@@ -34,7 +35,8 @@ import { SelectSpecialistSecondModule } from './select-specialist-second/select-
         AdminModule,
         ComponentsRepairsModalModule,
         SelectSpecialistModule,
-        SelectSpecialistSecondModule
+        SelectSpecialistSecondModule,
+        AuthSecondModule
     ],
     declarations: [
         WebComponent,
