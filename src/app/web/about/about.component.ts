@@ -1,4 +1,6 @@
 import {Component} from '@angular/core';
+import { LocalStorageService } from 'ngx-store';
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'app-about',
@@ -55,7 +57,16 @@ export class AboutComponent {
         }
     ];
 
-    constructor() {
-        // console.log('home Component is loaded');
+    constructor(public localStorageService: LocalStorageService,
+                public router: Router) {
+
+    }
+
+    selectSpec() {
+        if (!this.localStorageService.get('user')) {
+            this.router.navigate(['web/login']);
+        } else {
+            this.router.navigate(['web/select-specialist']);
+        }
     }
 }
