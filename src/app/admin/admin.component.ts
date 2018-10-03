@@ -22,7 +22,7 @@ export class AdminComponent implements OnInit {
     constructor(private router: Router, private localStorageService: LocalStorageService) {
 
         // this.logged = this.localStorageService.get('token');
-        // this.user = this.localStorageService.get('user');
+        this.user = this.localStorageService.get('user');
     }
 
     ngOnInit() {
