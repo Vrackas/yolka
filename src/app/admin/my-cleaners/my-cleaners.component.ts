@@ -84,6 +84,7 @@ export class MyCleanersComponent implements OnInit {
         this.tableHeader = ['Дата', 'Вид уборки', 'Специалист', 'Стоимость'];
 
         this.route.data.forEach(success => {
+
             if (success['data']) {
                 this.list = success['data']['entity'];
             }

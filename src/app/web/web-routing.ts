@@ -81,6 +81,9 @@ const WEB_ROUTING: Routes = [
                     {
                         path: 'personal-room-cleaner',
                         component: PersonalRoomCleanerComponent,
+                        resolve: {
+                            data: GetMyCleaningResolve
+                        }
                     },
                     {
                         path: 'my-cleaners',
